@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playbook - Free Your Child From Screens</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #001f3f 0%, #000000 100%);
+      color: #ffffff;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #ff5252 0%, #00e676 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .glow-button {
+      box-shadow: 0 0 15px rgba(0, 200, 83, 0.6);
+      transition: all 0.3s ease;
+    }
+    
+    .glow-button:hover {
+      box-shadow: 0 0 25px rgba(0, 200, 83, 0.8);
+      transform: translateY(-2px);
+    }
+    
+    .offer-card {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .offer-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+    
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .video-container {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .video-container iframe,
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .flipbook-container {
+      max-width: 700px;
+      margin: 30px auto;
+      text-align: center;
+    }
+    
+    .flipbook-iframe {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      margin: 0 auto;
+    }
+  
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  
+    /* Animation classes */
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Price styling */
+    .price {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1;
+      margin: 20px 0;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .price::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #00c853, #001f3f);
+    }
+    
+    /* Ribbon for popular offer */
+    .ribbon {
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+    }
+    
+    .ribbon-content {
+      position: absolute;
+      display: block;
+      width: 225px;
+      padding: 15px 0;
+      background-color: #00c853;
+      box-shadow: 0 5px 10px rgba(0,0,0,.1);
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      transform: rotate(45deg);
+      right: -25px;
+      top: 40px;
+    }
+    
+    /* Offer card gradient */
+    .premium-offer {
+      background: linear-gradient(135deg, rgba(0, 40, 83, 0.8) 0%, rgba(0, 200, 83, 0.3) 100%);
+      border: 2px solid rgba(0, 200, 83, 0.5);
+    }
+    
+    .basic-offer {
+      background: linear-gradient(135deg, rgba(0, 40, 83, 0.8) 0%, rgba(0, 100, 200, 0.3) 100%);
+      border: 2px solid rgba(0, 100, 200, 0.5);
+    }
+  
+    /* Countdown timer styles */
+    .countdown-container {
+      background: #111;
+      padding: 20px;
+      border: 2px solid #e53935;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .countdown-message {
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    
+    .countdown-timer {
+      font-size: 32px;
+      font-weight: bold;
+      color: #ff5252;
+    }
+
+    /* Wine red text highlight */
+    .wine-highlight {
+      background-color: #722f37;
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <!-- Header -->
+  <header class="py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center">
+        <img src="https://i.imgur.com/1N7yWMM.png" alt="Logo" class="w-48 floating" />
+      </div>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="py-8">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-3xl md:text-4xl font-bold text-center mb-6">
+        <span class="gradient-text">If you hand your phone to your child just to keep them quiet...</span><br>
+        <span class="text-white">don't be surprised when they stop listening to you.</span>
+      </h1>
+      <p class="text-lg text-gray-300 text-center mb-4">What starts as an innocent YouTube video turns into anxiety, dependence, and emotional distance. And no one will tell you until it's too late.</p>
+      
+      <!-- Video -->
+      <p class="text-lg text-gray-300 text-center mb-4"><span class="wine-highlight">🚨 Watch this before handing them the tablet again.</span></p>
+      <div class="video-container mb-4">
+        <video controls autoplay muted playsinline class="w-full h-full">
+          <source src="https://dalrnrpokeqkc.cloudfront.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/680827d26c0c5295c95235a5/original.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      <!-- Button 1 after video -->
+      <div class="text-center mb-8">
+        <a href="#offers" class="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg glow-button">
+          Show me how to protect my child before it gets worse
+        </a>
+      </div>
+      
+      <!-- Book Benefits -->
+      <section class="py-12 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-3xl font-bold text-center mb-8 text-green-400">Over <span class="text-white">10,000 families</span> already stopped digital addiction using this</h2>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-16">
+            <div class="flex items-start">
+              <div class="feature-icon bg-green-500/20 text-green-400">
+                <i class="fas fa-check text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-1">Built with child psychologists</h3>
+                <p class="text-gray-300">Based on scientific research about child development</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="feature-icon bg-blue-500/20 text-blue-400">
+                <i class="fas fa-gamepad text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-1">50 tested offline activities</h3>
+                <p class="text-gray-300">Creative games that stimulate development</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="feature-icon bg-purple-500/20 text-purple-400">
+                <i class="fas fa-file-pdf text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-1">PDF version to print in minutes</h3>
+                <p class="text-gray-300">Printable and always available when needed</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="feature-icon bg-yellow-500/20 text-yellow-400">
+                <i class="fas fa-child text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-1">Perfect for ages 3 to 10</h3>
+                <p class="text-gray-300">Strengthens parent-child connection</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Problem Section -->
+          <section class="py-12">
+            <div class="container mx-auto px-4 max-w-4xl">
+              <h2 class="text-3xl font-bold text-center mb-8 text-red-400">What screens are doing to your child's brain (and you pretend not to see):</h2>
+              <p class="text-lg text-gray-300 text-center mb-10">
+                🚨 Destroys attention and causes irritability<br>
+                🚨 Lowers creativity and communication<br>
+                🚨 Leads to cognitive delays and dependence<br>
+                🚨 Creates emotional distance between you<br><br>
+                📉 Studies show: 3+ hours per day doubles the risk of anxiety and attention issues.<br>
+                Is your child still safe?
+              </p>
+              
+              <!-- Pressure Button -->
+              <div class="text-center">
+                <a href="#offers" class="inline-block bg-gradient-to-r from-red-500 to-red-600 text-white font-bold py-4 px-8 rounded-xl text-lg glow-button">
+                  ⛔ I want to stop this while I still can
+                </a>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Flipbook Preview -->
+          <div class="flipbook-container">
+            <h2 class="text-2xl font-bold mb-4 text-white">Take a sneak peek inside the book:</h2>
+            <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe flipbook-iframe" src="https://heyzine.com/flip-book/b473fd4945.html" style="width: 312px; height: 366px;"></iframe>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Unique Mechanism Section -->
+      <section class="py-12 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-3xl font-bold text-center mb-8 text-green-400">You don't need to be creative or a teacher.</h2>
+          <p class="text-lg text-gray-300 text-center mb-10">
+            This book was built for tired, busy parents. Smart, simple, zero-screen activities. You just print it and apply. And feel the difference in one week.
+          </p>
+        </div>
+      </section>
+      
+      <!-- Testimonial -->
+      <section class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-3xl font-bold text-center mb-8 text-white">Real testimonial</h2>
+          
+          <div class="testimonial-card p-8 rounded-xl mb-8">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold">Ana Clara S.</h4>
+                <p class="text-gray-400 text-sm">Mother of Pedro, 5 years old</p>
+              </div>
+            </div>
+            <p class="text-lg italic text-gray-300 mb-6">
+              "I thought my son was hyperactive... until we cut screen time. Now he even calls me to play. This book saved our bond. Thank you!"
+            </p>
+            <div class="flex">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400 ml-1"></i>
+              <i class="fas fa-star text-yellow-400 ml-1"></i>
+              <i class="fas fa-star text-yellow-400 ml-1"></i>
+              <i class="fas fa-star text-yellow-400 ml-1"></i>
+            </div>
+          </div>
+          
+          <img src="https://i.imgur.com/CRk6lit.jpeg" alt="Feedback" class="w-full max-w-lg mx-auto rounded-xl shadow-lg" />
+        </div>
+      </section>
+      
+      <!-- Offers -->
+      <section id="offers" class="py-12 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <!-- Countdown Timer -->
+          <div class="countdown-container">
+            <h3 class="countdown-message">
+              🕐 This offer is available for the next few minutes only.<br>
+              We can't guarantee this discount will still be available after the timer hits zero.
+            </h3>
+            <p id="countdown" class="countdown-timer"></p>
+          </div>
+          
+          <h2 class="text-3xl font-bold text-center mb-8 text-white">Choose your version and start transforming your child's routine today:</h2>
+          
+          <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <!-- Premium Offer -->
+            <div class="offer-card premium-offer p-8 relative">
+              <div class="ribbon">
+                <span class="ribbon-content">Most Popular</span>
+              </div>
+              
+              <div class="text-center mb-6">
+                <div class="text-green-400 text-2xl font-bold mb-2">Complete Package</div>
+                <div class="price text-green-400">$17</div>
+                <div class="text-gray-300 mb-4">One-time payment</div>
+              </div>
+              
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                  <span class="text-gray-200">50 creative activities</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                  <span class="text-gray-200">Lifetime access</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                  <span class="text-gray-200">Monthly updates</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                  <span class="text-gray-200">PDF + online access</span>
+                </li>
+              </ul>
+              
+              <a href="https://pay.hotmart.com/R99304168T?checkoutMode=10" class="block w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-4 px-6 rounded-lg text-center glow-button hover:from-green-600 hover:to-green-700 transition-all duration-300">
+                I want the full one
+              </a>
+            </div>
+            
+            <!-- Basic Offer -->
+            <div class="offer-card basic-offer p-8">
+              <div class="text-center mb-6">
+                <div class="text-blue-400 text-2xl font-bold mb-2">Basic Package</div>
+                <div class="price text-blue-400">$12</div>
+                <div class="text-gray-300 mb-4">One-time payment</div>
+              </div>
+              
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
+                  <span class="text-gray-200">30 offline activities</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
+                  <span class="text-gray-200">6 months of access</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-blue-400 mt-1 mr-3"></i>
+                  <span class="text-gray-200">Printable PDF</span>
+                </li>
+              </ul>
+              
+              <a href="https://pay.hotmart.com/A99303068Y?checkoutMode=10" class="block w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-4 px-6 rounded-lg text-center glow-button hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
+                I want the basic one
+              </a>
+            </div>
+          </div>
+          
+          <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 text-center max-w-2xl mx-auto">
+            <div class="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-shield-alt text-2xl text-yellow-400"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">If after 30 days you don't feel a difference, we'll refund you.</h3>
+            <p class="text-gray-300">But the time your child lost to screens — no one can give that back.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- FAQ -->
+      <section class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <h2 class="text-3xl font-bold text-center mb-8 text-white">Frequently Asked Questions</h2>
+          
+          <div class="space-y-6">
+            <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+              <div class="flex items-start">
+                <div class="bg-purple-500/20 text-purple-400 rounded-lg p=2 mr=4">
+                <i class="fas fa-question"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb=2">Is this a physical product?</h3>
+                  <p class="text-gray-300">No. It's a digital product you can print.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gray-800/50 p-6 rounded-xl border border-gray=700">
+              <div class="flex items-start">
+                <div class="bg-blue-500/20 text-blue-400 rounded-lg p=2 mr=4">
+                  <i class="fas fa-child"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb=2">Recommended age?</h3>
+                  <p class="text-gray-300">For kids aged 3 to 10.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gray-800/50 p-6 rounded-xl border border-gray=700">
+              <div class="flex items-start">
+                <div class="bg-green-500/20 text-green-400 rounded-lg p=2 mr=4">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb=2">How do I receive it?</h3>
+                <p class="text-gray-300">By email. Instant access after purchase.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gray-800/50 p-6 rounded-xl border border-gray=700">
+              <div class="flex items-start">
+                <div class="bg-yellow-500/20 text-yellow-400 rounded-lg p=2 mr=4">
+                  <i class="fas fa-print"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb=2">Is there a guarantee?</h3>
+                  <p class="text-gray-300">Yes. 30-day full refund.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Final Button -->
+          <div class="text-center mt-8">
+            <a href="#offers" class="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg glow-button">
+              ⏳ Time is running. The screens won't stop. I want to act now.
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <footer class="py-8 bg-black">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <div class="text-center">
+            <img src="https://i.imgur.com/1N7yWMM.png" alt="Logo" class="w-32 mx-auto mb-6" />
+            <p class="text-gray-400 mb-4">© 2023 Playbook. All rights reserved.</p>
+            <p class="text-gray-500 text-sm">
+              <a href="#" class="hover:text-gray-300 transition">Terms of Use</a> |
+              <a href="#" class="hover:text-gray-300 transition">Privacy Policy</a> |
+              <span class="text-gray-300">30-day money back guarantee</span>
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fadeIn');
+              }
+            });
+          }, {threshold: 0.1});
+          
+          document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+          });
+        });
+      
+        // Countdown timer
+        let mins = 29;
+        let secs = 59;
+        const countdown = document.getElementById('countdown');
+        const interval = setInterval(() => {
+          countdown.textContent = 
+            (mins < 10 ? '0' + mins : mins) + ':' + (secs < 10 ? '0' + secs : secs);
+          if (secs === 0) {
+            if (mins === 0) {
+              clearInterval(interval);
+              countdown.textContent = "00:00";
+            } else {
+              mins--;
+              secs = 59;
+            }
+          } else {
+            secs--;
+          }
+        }, 1000);
+      </script>
+    </div>
+  </section>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=ar5841/espa-o-top" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
