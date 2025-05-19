@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>	
+
+    <script>
+    tlq('set', 'ContactInfo', {
+      email: 'example@email.com',
+      phoneNumber: '+358501234567',
+      firstName: 'David',
+      lastName:'Smith',
+      birthday: '1985-06-17',
+      gender: 'male',
+      address: 'Street 1',
+      postCode: '11015',
+      city: 'Berlin',
+      country:'Germany',
+      externalId: '123-91197003219'
+    });
+</script>
+    
 <script>
     !function(f,b,e,v,n,t,s)
     {if(f.tlq)return;n=f.tlq=function(){n.callMethod?
@@ -17,6 +34,7 @@
 
     tlq('init', 'LS-74072632-4');
 </script>
+    
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
