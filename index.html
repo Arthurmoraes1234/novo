@@ -1,282 +1,729 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offline Activities | The Magical Book to Get Your Child Off Screens</title>
-    
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "r8fcmye1fm");
-    </script>
-    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '3363795970430012'); 
-      fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=3363795970430012&ev=PageView&noscript=1"/>
-    </noscript>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>365+ Educational Activities - Get Kids Off Screens</title>
+
+    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0D1117;
-            color: #E5E7EB;
+        /* --- DESIGN SYSTEM & VARIABLES --- */
+        :root {
+            --color-primary: #FF6B6B; /* Um vermelho-coral vibrante para CTAs */
+            --color-secondary: #4ECDC4; /* Um verde-água para confiança e sucesso */
+            --color-accent: #FFD93D;    /* Amarelo para destaque (garantia, bônus) */
+            --color-dark: #2C3E50;      /* Azul escuro para texto e fundos */
+            --color-text: #34495E;      /* Cinza-azulado para texto principal */
+            --color-light-bg: #F8F9FA;  /* Fundo muito claro */
+            --color-white: #FFFFFF;
+            --font-main: 'Poppins', sans-serif;
+            --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.07);
+            --shadow-strong: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* --- GLOBAL RESET & STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
-            overflow-x: hidden;
         }
-        .gradient-text-blue {
-            background-image: linear-gradient(90deg, #60A5FA, #3B82F6);
-            -webkit-background-clip: text; background-clip: text; color: transparent;
+
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text);
+            line-height: 1.7;
+            background-color: var(--color-white);
         }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-name: fadeInUp;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(255, 107, 107, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+        }
+
+        /* --- TYPOGRAPHY & HELPERS --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--color-text);
+            max-width: 700px;
+            margin: -10px auto 50px auto;
+        }
+
+        .highlight {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+        
+        /* --- BUTTONS --- */
         .cta-button {
-            background: linear-gradient(90deg, #3B82F6, #2563EB);
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 25px rgba(59, 130, 246, 0.25);
+            display: inline-block;
+            background: var(--color-primary);
+            color: var(--color-white);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-strong);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
         }
+
         .cta-button:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 10px 35px rgba(59, 130, 246, 0.4);
+            transform: translateY(-5px);
+            background-color: #e55a5a;
         }
-        .section-card {
-            background-color: rgba(22, 27, 34, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid #30363d;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
+
+        .cta-button.pulse-animation {
+            animation: pulse 2s infinite;
         }
-        .section-card:hover {
-            transform: translateY(-8px);
-            border-color: #2563EB;
+
+
+        /* --- SECTION 1: HERO --- */
+        .hero {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            padding-top: 40px;
+            padding-bottom: 60px;
+            text-align: center;
         }
-        .angled-section {
+        .hero .headline {
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        .hero .subheadline {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .hero .main-image {
+            max-width: 100%;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .hero-badge i {
+            color: var(--color-secondary);
+            margin-right: 8px;
+        }
+
+
+        /* --- SECTION 2: PAIN + SOLUTION --- */
+        .pain-solution {
+            background-color: var(--color-light-bg);
+        }
+        .pain-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .pain-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .pain-list i {
+            color: var(--color-primary);
+        }
+        .pain-solution .solution-text {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- SECTION 3: PRODUCT INTRO --- */
+        .product-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .product-images img {
+            max-width: 100%;
+            width: 400px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-strong);
+            transition: transform 0.3s ease;
+        }
+        .product-images img:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        /* --- SECTION 3.1: SOCIAL PROOF CAROUSEL --- */
+        .social-proof {
+            background-color: var(--color-light-bg);
+        }
+        .social-proof h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .social-proof h2 i {
+            color: var(--color-accent);
+        }
+        .carousel {
             position: relative;
-            background-color: #161B22;
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
-        .angled-section::before, .angled-section::after {
-            content: ''; position: absolute; left: 0; width: 100%; height: 100px;
-            background-color: #161B22; z-index: -1;
+        .carousel-track {
+            display: flex;
+            width: calc(250px * 8); /* 4 images visible, twice for seamless loop */
+            animation: scroll 30s linear infinite;
         }
-        .angled-section::before { top: -50px; transform: skewY(-2deg); }
-        .angled-section::after { bottom: -50px; transform: skewY(-2deg); }
-        .aurora-bg { position: absolute; inset: 0; overflow: hidden; z-index: -1; }
-        .aurora-blob {
-            position: absolute; border-radius: 9999px; opacity: 0.15; filter: blur(100px);
+        .carousel-slide {
+            width: 250px;
+            flex-shrink: 0;
+            padding: 0 15px;
         }
-        .faq-item.active button i { transform: rotate(180deg); }
-        .faq-item.active .faq-content { max-height: 200px; padding-top: 1rem; padding-bottom: 1.25rem; }
+        .carousel-slide img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-250px * 4)); }
+        }
+
+
+        /* --- SECTION 4: WHAT YOU'LL GET --- */
+        .what-you-get-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            font-size: 1.1rem;
+        }
+        .what-you-get-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--color-light-bg);
+            border-radius: 12px;
+            font-weight: 600;
+        }
+        .what-you-get-list i {
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+        }
+        .value-proposition {
+            text-align: center;
+            background: linear-gradient(45deg, var(--color-secondary), #62e0d6);
+            color: var(--color-white);
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- SECTION 5: BONUSES --- */
+        .bonuses {
+            background-color: var(--color-light-bg);
+        }
+        .bonuses-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        @media (min-width: 768px) {
+            .bonuses-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .bonus-card {
+            background-color: var(--color-white);
+            border: 2px dashed var(--color-accent);
+            padding: 30px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+        }
+        .bonus-card i {
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 15px;
+        }
+        .bonus-card h3 {
+            font-size: 1.3rem;
+            color: var(--color-dark);
+            margin-bottom: 10px;
+        }
+        
+        /* --- SECTION 7: FOMO / SCARCITY --- */
+        .fomo {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: var(--color-white);
+            text-align: center;
+        }
+        .fomo .section-title {
+            color: var(--color-white);
+        }
+        .fomo-box {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .fomo-box p {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* --- SECTION 8: GUARANTEE --- */
+        .guarantee-box {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            border: 3px dashed var(--color-secondary);
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+        }
+        .guarantee-box .icon {
+            font-size: 4rem;
+            color: var(--color-secondary);
+            margin-bottom: 20px;
+        }
+        
+        /* --- SECTION 9: FINAL OFFER --- */
+        .final-offer {
+            background-color: var(--color-light-bg);
+        }
+        .offer-card {
+            background-color: var(--color-white);
+            border: 3px solid var(--color-primary);
+            box-shadow: var(--shadow-strong);
+            border-radius: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+        }
+        .offer-card .price {
+            margin: 20px 0;
+        }
+        .offer-card .old-price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: var(--color-text-claro);
+            margin-right: 10px;
+        }
+        .offer-card .new-price {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--color-dark);
+        }
+        .offer-list {
+            list-style: none;
+            text-align: left;
+            margin: 30px auto;
+            max-width: 400px;
+        }
+        .offer-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .offer-list i {
+            color: var(--color-secondary);
+        }
+        .licenses-left {
+            display: inline-block;
+            background: #ffecec;
+            color: var(--color-primary);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* --- SECTION 10: TESTIMONIALS --- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        @media (min-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .testimonial-card {
+            background-color: var(--color-light-bg);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .testimonial-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .testimonial-author h4 {
+            font-weight: 700;
+            color: var(--color-dark);
+        }
+        .testimonial-author .stars {
+            color: var(--color-accent);
+        }
+        .testimonial-body {
+            font-style: italic;
+        }
+
+        /* --- SECTION 11: FAQ --- */
+        .faq {
+            background-color: var(--color-light-bg);
+        }
+        .faq-item {
+            background-color: var(--color-white);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .faq-item h3 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--color-dark);
+            cursor: pointer;
+        }
+
+
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <div class="bg-gradient-to-r from-red-600 to-red-500 text-white font-bold text-center py-2 px-4 fixed top-0 w-full z-50 shadow-lg">
-        🚨 LAST DAY OF PROMOTION
-    </div>
-
-    <div class="pt-10">
-        <section class="relative pt-16 pb-12 md:pb-32 text-center">
-            <div class="aurora-bg">
-                <div class="aurora-blob top-0 left-0 w-96 h-96 bg-blue-500"></div>
-                <div class="aurora-blob bottom-0 right-0 w-96 h-96 bg-red-500"></div>
+    <!-- SECTION 1 – HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="headline animated">American moms are in shock:<br>This <span class="highlight">“magic book”</span> is getting kids off screens in just 48 hours.</h1>
+            <p class="subheadline animated" style="animation-delay: 0.2s;">No yelling, no punishment, no therapy.<br>And you can get instant access right now, for just $10.</p>
+            <div class="hero-badge animated" style="animation-delay: 0.4s;">
+                <i class="fas fa-bolt"></i> Instant delivery + lifetime access
             </div>
-            <div class="container mx-auto px-6 relative z-10">
-                <img src="https://i.imgur.com/s9myy4C.png" alt="Brand Logo" class="w-48 mx-auto mb-8">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                    This <span class="gradient-text-blue">magical book</span> will get your child off screens without you lifting a finger.
-                </h1>
-                <p class="text-lg md:text-xl text-muted-text max-w-3xl mx-auto mb-8">
-                    365+ fun and unique activities to disconnect your child from screens starting today!
-                </p>
-                <div class="flex flex-wrap justify-center items-center gap-4 mb-10 text-sm">
-                    <span class="bg-dark-secondary py-2 px-4 rounded-full border border-gray-700"><i class="fas fa-gamepad mr-2 text-blue-400"></i>PDF for print and online use</span>
-                    <span class="bg-dark-secondary py-2 px-4 rounded-full border border-gray-700"><i class="fas fa-calendar-day mr-2 text-blue-400"></i>One activity per day</span>
-                    <span class="bg-dark-secondary py-2 px-4 rounded-full border border-gray-700"><i class="fas fa-bolt mr-2 text-blue-400"></i>Instant results</span>
-                </div>
-                <div class="relative z-20 md:-mb-56 lg:-mb-80">
-                     <img src="https://i.imgur.com/5FCQ3wu.png" alt="Magical Book Mockup" class="w-full mx-auto" style="max-width: 1600px;">
-                </div>
-                   <a href="#ofertas-section" class="cta-button text-white font-bold py-4 px-12 rounded-full text-lg inline-block mt-8">
-                    Yes, I want to start now!
-                </a>
-                <p class="text-xl font-bold text-light-text mt-4">See everything you get below!</p>
-            </div>
-        </section>
+            <br>
+            <a href="#final-offer-cta" class="cta-button pulse-animation animated" style="animation-delay: 0.6s;">I WANT ACCESS NOW</a>
 
-        <div class="angled-section">
-            <section class="relative py-20 md:pt-96">
-                <div class="container mx-auto px-6">
-                    <div class="w-full max-w-2xl mx-auto mb-16">
-                        <img src="https://i.imgur.com/vugTaYE.jpeg" alt="Activities Mockup" class="rounded-2xl shadow-2xl w-full">
-                    </div>
-                    <div class="text-center mb-16">
-                           <h2 class="text-3xl md:text-5xl font-bold">What will you <span class="gradient-text-blue">receive?</span></h2>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div class="section-card"><div class="text-3xl mb-3"><i class="fas fa-layer-group text-blue-400"></i></div><h3 class="font-bold text-lg">365+ Activities</h3><p class="text-sm text-muted-text">Organized by age to stimulate creativity.</p></div>
-                            <div class="section-card"><div class="text-3xl mb-3"><i class="fas fa-users text-blue-400"></i></div><h3 class="font-bold text-lg">Member's Area</h3><p class="text-sm text-muted-text">Exclusive access to our online platform.</p></div>
-                            <div class="section-card"><div class="text-3xl mb-3"><i class="fas fa-file-pdf text-blue-400"></i></div><h3 class="font-bold text-lg">Printable PDF</h3><p class="text-sm text-muted-text">The complete activity book ready to print.</p></div>
-                             <div class="section-card bg-blue-500/10 border-blue-500/30"><div class="text-3xl mb-3"><i class="fas fa-video text-blue-400"></i></div><h3 class="font-bold text-lg">Video Guide</h3><p class="text-sm text-muted-text">A special VSL showing how to get the most out of the material.</p></div>
-                        </div>
-                        <div>
-                            <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-gray-700">
-                                <vturb-smartplayer id="vid-68656a662c8801d4bbc4c9f3" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
-                                <script type="text/javascript">var s=document.createElement("script");s.src="https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/68656a662c8801d4bbc4c9f3/v4/player.js",s.async=!0,document.head.appendChild(s);</script>
-                            </div>
-                            <a href="#ofertas-section" class="cta-button text-white font-bold py-3 px-8 rounded-full text-md w-full text-center mt-8 inline-block">
-                                Yes, I want it all now!
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <img src="https://i.imgur.com/7AyRU6B.png" alt="Happy child playing with educational toys" class="main-image animated" style="animation-delay: 0.8s;">
         </div>
-        
-<section class="py-20">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-5xl font-bold mb-12">And only today, you’ll also get <span class="gradient-text-blue">2 amazing bonuses:</span></h2>
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div class="section-card flex flex-col justify-between">
-                <div>
-                    <img src="https://i.imgur.com/h5Sum4X.jpeg" alt="Daily Chore Chart" class="rounded-xl mb-6 h-64 w-full object-cover">
-                    <h3 class="text-xl font-bold">Printable daily chore chart for kids</h3>
-                </div>
-                <div class="mt-4">
-                    <span class="text-lg text-muted-text line-through mr-3">$19.90</span>
-                    <span class="bg-green-500 text-white font-bold py-2 px-4 rounded-full text-xl">FREE</span>
-                </div>
-            </div>
-            <div class="section-card flex flex-col justify-between">
-                <div>
-                    <img src="https://i.imgur.com/l3r07w6.png" alt="Healthy Foods Guide" class="rounded-xl mb-6 h-64 w-full object-cover">
-                    <h3 class="text-xl font-bold">Complete guide to introducing healthy foods naturally</h3>
-                </div>
-                <div class="mt-4">
-                    <span class="text-lg text-muted-text line-through mr-3">$19.90</span>
-                    <span class="bg-green-500 text-white font-bold py-2 px-4 rounded-full text-xl">FREE</span>
-                </div>
-            </div>
-            </div>
-    </div>
-</section>
+    </section>
 
-        <div class="angled-section">
-            <section class="relative py-20">
-                <div class="container mx-auto px-6 max-w-3xl text-center">
-                    <i class="fas fa-biohazard text-5xl text-red-500 mb-6"></i>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">The phone isn't just distracting your child.<br>It's <span class="text-red-500">damaging them.</span></h2>
-                    <div class="section-card bg-dark-primary p-8 text-left text-lg space-y-4">
-                        <p class="flex items-start"><span class="mr-3 text-red-500">❌</span> Destroying attention span</p>
-                        <p class="flex items-start"><span class="mr-3 text-red-500">❌</span> Causing emotional outbursts and irritation</p>
-                        <p class="flex items-start"><span class="mr-3 text-red-500">❌</span> Weakening emotional connection with parents</p>
-                        <p class="flex items-start"><span class="mr-3 text-red-500">❌</span> Delaying emotional and cognitive development</p>
-                        <p class="flex items-start font-bold text-light-text border-t border-gray-700 pt-4 mt-4!"><span class="mr-3 text-red-500">💣</span> Just 2 hours of screen time per day doubles the risk of anxiety and ADHD.</p>
-                    </div>
-                </div>
-            </section>
+    <!-- SECTION 2 – PAIN + SOLUTION -->
+    <section class="pain-solution">
+        <div class="container">
+            <h2 class="section-title">Is your child glued to a screen?</h2>
+            <ul class="pain-list">
+                <li><i class="fas fa-times-circle"></i> Gets upset when you take the phone away?</li>
+                <li><i class="fas fa-times-circle"></i> Doesn’t know how to play alone anymore?</li>
+                <li><i class="fas fa-times-circle"></i> Feels like the tablet became the official babysitter?</li>
+            </ul>
+            <p class="solution-text">You’re not alone.<br>Over <span class="highlight">43,000 moms</span> have been through this — and they all found the same solution.</p>
         </div>
-        
-        <section class="py-20">
-            <div class="container mx-auto px-6 text-center max-w-3xl">
-                <h2 class="text-3xl md:text-5xl font-extrabold mb-4">🎯 Your Chance to Act is <span class="gradient-text-blue">Now!</span></h2>
-                <p class="text-lg text-muted-text mb-8">Stop letting screens dictate your child's future. Get the complete package with all bonuses for a one-time special price.</p>
-                <a href="#ofertas-section" class="cta-button text-white font-bold py-4 px-12 rounded-full text-xl inline-block">
-                    Claim My Discounted Package
-                </a>
-            </div>
-        </section>
+    </section>
 
-        <section class="py-20 bg-dark-secondary">
-            <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10 text-center">
-                <div class="space-y-3"><i class="fas fa-paper-plane text-4xl text-blue-400"></i><h3 class="text-2xl font-bold">How do you access?</h3><p class="text-muted-text">After payment, you’ll receive an email with your login and password. Instant access to start today!</p></div>
-                <div class="space-y-3"><i class="fas fa-shield-alt text-4xl text-blue-400"></i><h3 class="text-2xl font-bold">Risk-Free – 30-Day Guarantee</h3><p class="text-muted-text">Didn’t like it? You have 30 days to request a full refund. No hassle. Lifetime access for you.</p></div>
-                <div class="space-y-3"><i class="fas fa-lock text-4xl text-blue-400"></i><h3 class="text-2xl font-bold">100% Secure Purchase</h3><p class="text-muted-text">Your data is encrypted and protected on a certified platform. Fast and safe payment.</p></div>
+    <!-- SECTION 3 – PRODUCT INTRO -->
+    <section class="product-intro">
+        <div class="container">
+            <h2 class="section-title">Meet the digital book that changed the routine of thousands of families</h2>
+            <p class="section-subtitle">“365+ Educational Activities” – created by specialists to capture your child’s attention without using screens.</p>
+            <div class="product-images">
+                <img src="https://i.imgur.com/7dGudBS.png" alt="Cover of the 365+ Educational Activities book">
+                <img src="https://i.imgur.com/rHXeAkr.png" alt="Inside pages of the educational activities book">
             </div>
-        </section>
-        
-        <section class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-5xl font-bold">Hear from <span class="gradient-text-blue">Parents Like You!</span></h2>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <div class="section-card"><i class="fas fa-quote-left text-blue-400 text-2xl mb-4"></i><p class="text-light-text mb-4">"My son spent the whole afternoon playing on the floor without his phone. Incredible!"</p><p class="font-bold text-muted-text">– Amanda G.</p></div>
-                    <div class="section-card"><i class="fas fa-quote-left text-blue-400 text-2xl mb-4"></i><p class="text-light-text mb-4">"I tried it with low expectations... and it worked SO well!"</p><p class="font-bold text-muted-text">– Sarah M.</p></div>
-                    <div class="section-card"><i class="fas fa-quote-left text-blue-400 text-2xl mb-4"></i><p class="text-light-text mb-4">"The best $19 I've ever spent. The house is quieter and my kids are more creative."</p><p class="font-bold text-muted-text">– Jessica L.</p></div>
-                    <div class="section-card"><i class="fas fa-quote-left text-blue-400 text-2xl mb-4"></i><p class="text-light-text mb-4">"Finally found something that holds my daughter's attention more than cartoons."</p><p class="font-bold text-muted-text">– Mike P.</p></div>
-                    <div class="section-card md:col-span-2 lg:col-span-1"><i class="fas fa-quote-left text-blue-400 text-2xl mb-4"></i><p class="text-light-text mb-4">"Simple, practical, and it actually works. Highly recommend to any parent struggling with screen time."</p><p class="font-bold text-muted-text">– Emily R.</p></div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="ofertas-section" class="py-20 bg-gray-900">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-5xl font-extrabold">🎯 Special <span class="gradient-text-blue">Limited-Time</span> Offer</h2>
-                    <p class="mt-6 text-xl font-bold text-red-500">Unbeatable Offer! Complete package with a discount valid today only!</p>
-                </div>
-                <div class="flex flex-col lg:flex-row gap-8 justify-center items-stretch">
-                    <div class="section-card w-full lg:max-w-md p-8 border-4 border-blue-500 relative text-center flex flex-col justify-between">
-                        <div>
-                            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-sm font-bold px-4 py-1 rounded-full">🔥 BEST SELLER</div>
-                            <h3 class="text-3xl font-bold text-blue-400">COMPLETE OFFER</h3>
-                            <p class="text-lg text-muted-text line-through mt-4">From $69.90</p>
-                            <p class="text-5xl font-extrabold my-2">Today for just $12</p>
-                            <ul class="space-y-2 mb-6 text-light-text text-left">
-                                <li class="flex items-center"><i class="fas fa-star mr-3 text-yellow-400"></i>365+ creative & tested activities</li>
-                                <li class="flex items-center"><i class="fas fa-star mr-3 text-yellow-400"></i>Lifetime access</li>
-                                <li class="flex items-center"><i class="fas fa-star mr-3 text-yellow-400"></i>Monthly updates</li>
-                                <li class="flex items-center"><i class="fas fa-star mr-3 text-yellow-400"></i>PDF + online access</li>
-                                <li class="flex items-center"><i class="fas fa-star mr-3 text-yellow-400"></i>Free bonuses included</li>
-                            </ul>
-                        </div>
-                        <a href="https://expressbellavita.systeme.io/paystripe1" onclick="fbq('track', 'InitiateCheckout');" class="cta-button text-white font-bold py-4 px-8 text-xl text-center block w-full">Buy now!</a>
-                    </div>
-                </div>
-                <p class="text-muted-text text-center mt-8"><i class="fas fa-hourglass-half mr-2"></i>Attention: This offer may go offline at any moment.</p>
+    <!-- SECTION 3.1 – SOCIAL PROOF CAROUSEL -->
+    <section class="social-proof">
+        <div class="container">
+            <h2><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><br>Over 43,000 American moms have already tried it and approved!</h2>
+        </div>
+        <div class="carousel">
+            <div class="carousel-track">
+                <!-- Slide set 1 -->
+                <div class="carousel-slide"><img src="https://i.imgur.com/IOcsZ8u.png" alt="Testimonial photo 1"></div>
+                <div class="carousel-slide"><img src="https://i.imgur.com/koFYbkM.png" alt="Testimonial photo 2"></div>
+                <div class="carousel-slide"><img src="https://i.imgur.com/Arez2gm.png" alt="Testimonial photo 3"></div>
+                <div class="carousel-slide"><img src="https://i.imgur.com/poXtryi.jpeg" alt="Testimonial photo 4"></div>
+                <!-- Slide set 2 (duplicate for seamless loop) -->
+                <div class="carousel-slide"><img src="https://i.imgur.com/IOcsZ8u.png" alt="Testimonial photo 1"></div>
+                <div class="carousel-slide"><img src="https://i.imgur.com/koFYbkM.png" alt="Testimonial photo 2"></div>
+                <div class="carousel-slide"><img src="https://i.imgur.com/Arez2gm.png" alt="Testimonial photo 3"></div>
+                <div class="carousel-slide"><img src="https://i.imgur.com/poXtryi.jpeg" alt="Testimonial photo 4"></div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="bg-dark-primary border-t border-dark-secondary py-16">
-            <div class="container mx-auto px-6">
-                   <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-                   <div class="max-w-3xl mx-auto space-y-4">
-                       <div class="faq-item bg-dark-secondary rounded-xl"><button class="w-full text-left p-5 flex justify-between items-center font-bold hover:text-blue-400 transition"><span>Is this a physical product?</span><i class="fas fa-chevron-down transition-transform"></i></button><div class="faq-content px-5 text-muted-text max-h-0 overflow-hidden transition-all duration-300 ease-in-out"><p>No. It’s a digital product. You’ll receive it by email and can print it at home.</p></div></div>
-                       <div class="faq-item bg-dark-secondary rounded-xl"><button class="w-full text-left p-5 flex justify-between items-center font-bold hover:text-blue-400 transition"><span>What’s the recommended age?</span><i class="fas fa-chevron-down transition-transform"></i></button><div class="faq-content px-5 text-muted-text max-h-0 overflow-hidden transition-all duration-300 ease-in-out"><p>From 3 to 10 years old. It works across different stages of childhood.</p></div></div>
-                       <div class="faq-item bg-dark-secondary rounded-xl"><button class="w-full text-left p-5 flex justify-between items-center font-bold hover:text-blue-400 transition"><span>Does it really work?</span><i class="fas fa-chevron-down transition-transform"></i></button><div class="faq-content px-5 text-muted-text max-h-0 overflow-hidden transition-all duration-300 ease-in-out"><p>If you apply it for 7 days, you’ll see the difference. Your child will change. The connection between you will change.</p></div></div>
-                       <div class="faq-item bg-dark-secondary rounded-xl"><button class="w-full text-left p-5 flex justify-between items-center font-bold hover:text-blue-400 transition"><span>Is there a guarantee?</span><i class="fas fa-chevron-down transition-transform"></i></button><div class="faq-content px-5 text-muted-text max-h-0 overflow-hidden transition-all duration-300 ease-in-out"><p>Yes — a 30-day guarantee. Buy it, test it, and if you don’t like it, we’ll refund you. No questions asked.</p></div></div>
-                   </div>
-                   <div class="mt-16 text-center text-muted-text text-sm">
-                       <img src="https://i.imgur.com/s9myy4C.png" alt="Brand Logo" class="w-32 mx-auto mb-6 opacity-70">
-                       <p class="mb-2">Brand | 2024 | All rights reserved</p>
-                       <div class="space-x-4"><a href="#" class="hover:text-white">Terms of Use</a><span>|</span><a href="#" class="hover:text-white">Privacy Policy</a><span>|</span><a href="#" class="hover:text-white">Support</a></div>
-                   </div>
+    <!-- SECTION 4 – WHAT YOU’LL GET -->
+    <section class="what-you-get">
+        <div class="container">
+            <h2 class="section-title">📦 Get all of this, instantly:</h2>
+            <ul class="what-you-get-list">
+                <li><i class="fas fa-check-circle"></i> 365 educational activities created by educators</li>
+                <li><i class="fas fa-check-circle"></i> Boosts focus, creativity, and discipline</li>
+                <li><i class="fas fa-check-circle"></i> Colorful illustrations + step-by-step instructions</li>
+                <li><i class="fas fa-check-circle"></i> Instant access via link</li>
+                <li><i class="fas fa-check-circle"></i> Ideal for children ages 3 to 10</li>
+            </ul>
+            <div class="value-proposition">
+                💥 You’re getting more value than most $500 courses out there.
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
     
-    <script>
-        function scrollToOffers() { document.getElementById('ofertas-section').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
-        document.querySelectorAll('.faq-item button').forEach(button => { button.addEventListener('click', () => { button.parentElement.classList.toggle('active'); }); });
-    </script>
+    <!-- SECTION 5 – EXCLUSIVE BONUSES -->
+    <section class="bonuses">
+        <div class="container">
+            <h2 class="section-title">🎁 And today you get 3 special bonuses, completely <span class="highlight">free</span>:</h2>
+            <div class="bonuses-grid">
+                <div class="bonus-card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Bonus 1: Behavior chart</h3>
+                    <p>A simple and effective chart to print and use, encouraging positive behavior.</p>
+                </div>
+                <div class="bonus-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Bonus 2: “7 Days Without Screens” calendar</h3>
+                    <p>A child-friendly challenge approved by psychoeducators to kickstart the new routine.</p>
+                </div>
+                <div class="bonus-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Bonus 3: Printable "Bobbie Gods"</h3>
+                    <p>Fun and creative characters to print, color, and play with.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 – WHY IT WORKS -->
+    <section class="why-it-works">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <h2 class="section-title">Why this method works<br>(even when nothing else does)</h2>
+            <p style="font-size: 1.2rem;">This material activates areas of the brain linked to <span class="highlight">focus and independence</span>.<br>It’s like your child’s brain gets “reset” and learns how to entertain themselves without a phone, YouTube, or tablet.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 7 – FOMO / SCARCITY + REGRET -->
+    <section class="fomo">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> This is the last time you’ll see this offer.</h2>
+            <div class="fomo-box">
+                <p>Only <span style="font-size: 1.5em; font-weight: 900;">47</span> digital licenses left today.<br>Once you leave this page, the offer disappears.</p>
+            </div>
+            <p style="margin-top: 30px; font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right:auto;">Don’t be the mom who regrets leaving it for later.<br>This is the kind of thing you buy and then think: <span style="font-weight: 700;">“How did I not see this sooner?”</span></p>
+        </div>
+    </section>
+
+    <!-- SECTION 8 – IRRESISTIBLE GUARANTEE -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-box">
+                <i class="fas fa-shield-alt icon"></i>
+                <h2 class="section-title">30-day full guarantee</h2>
+                <p style="font-size: 1.1rem;">Try it for 30 days. If you don’t see your child playing alone, less agitated, and more creative, we’ll refund 100% of your money.</p>
+                <p style="font-weight: 700; margin-top: 15px;">📌 No questions. No excuses. Just click and try.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9 – FINAL OFFER -->
+    <section id="final-offer-cta" class="final-offer">
+        <div class="container">
+            <div class="offer-card">
+                <h2 class="section-title">FULL OFFER – TODAY ONLY</h2>
+                <div class="price">
+                    <span class="old-price">$60</span>
+                    <span class="new-price">$10</span>
+                </div>
+                <ul class="offer-list">
+                    <li><i class="fas fa-check"></i> Complete digital book</li>
+                    <li><i class="fas fa-check"></i> 3 exclusive bonuses (worth $40+ alone)</li>
+                    <li><i class="fas fa-check"></i> Instant delivery</li>
+                    <li><i class="fas fa-check"></i> Lifetime access</li>
+                    <li><i class="fas fa-check"></i> One-time payment, no subscription</li>
+                </ul>
+                <div class="licenses-left">
+                    ⚠️ Only 47 licenses left
+                </div>
+                <!-- SUBSTITUA '#' PELO SEU LINK DE CHECKOUT -->
+                <a href="#" class="cta-button pulse-animation">I WANT TO BUY NOW</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SECTION 10 – TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What other moms are saying:</h2>
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="Jessica M.">
+                        <div class="testimonial-author">
+                            <h4>Jessica M.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-body">"I was skeptical, but desperate. On day TWO, my 5-year-old son spent an hour building with blocks and didn't ask for my phone once. I almost cried. Best $10 I've ever spent."</p>
+                </article>
+                <article class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Ashley P.">
+                        <div class="testimonial-author">
+                            <h4>Ashley P.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-body">"The '7 Days Without Screens' bonus calendar was genius. My daughter saw it as a game, not a punishment. The activities are so simple but so engaging. It completely changed our afternoons."</p>
+                </article>
+                <article class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Karen S.">
+                        <div class="testimonial-author">
+                            <h4>Karen S.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-body">"My house was so quiet... because the kids were actually focused on an activity from the book! Not the 'YouTube quiet'. The 'creative quiet'. It's a different, wonderful kind of peace. Highly recommend."</p>
+                </article>
+                <article class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emily R.">
+                        <div class="testimonial-author">
+                            <h4>Emily R.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-body">"I love that I don't need to buy a ton of craft supplies. Everything uses stuff we already have. It's practical, it's effective, and my kids are visibly less agitated. A lifesaver."</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11 – FAQ -->
+    <section class="faq">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3><i class="fas fa-question-circle" style="color:var(--color-primary); margin-right: 8px;"></i>Is it physical or digital?</h3>
+                <p>It’s 100% digital. You get an instant access link right after your purchase. You can read it on any device or print the activities you like most.</p>
+            </div>
+            <div class="faq-item">
+                <h3><i class="fas fa-question-circle" style="color:var(--color-primary); margin-right: 8px;"></i>Is it for any age?</h3>
+                <p>The activities are ideal for children aged 3 to 10. The instructions are simple for older kids to follow alone and perfect for younger ones to do with a little help.</p>
+            </div>
+            <div class="faq-item">
+                <h3><i class="fas fa-question-circle" style="color:var(--color-primary); margin-right: 8px;"></i>Do I need extra materials?</h3>
+                <p>No. We specifically designed all activities to use simple things you probably already have at home: paper, pencils, cardboard boxes, household items, etc.</p>
+            </div>
+            <div class="faq-item">
+                <h3><i class="fas fa-question-circle" style="color:var(--color-primary); margin-right: 8px;"></i>Does it really work?</h3>
+                <p>Most moms see a noticeable difference in 2 to 3 days. But we want you to be 100% confident, which is why you have 30 days to try it with our full money-back guarantee.</p>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
