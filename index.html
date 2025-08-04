@@ -39,7 +39,8 @@
         body {
             font-family: var(--font-main);
             color: var(--color-text-dark);
-            background-color: var(--color-bg-light);
+            /* ✨ MELHORIA: Fundo com gradiente suave para mais profundidade */
+            background: linear-gradient(180deg, var(--color-bg-light) 0%, #eef2f9 100%);
             overflow-x: hidden; /* Previne scroll horizontal das animações */
         }
         .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
@@ -50,6 +51,12 @@
             0% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(10deg); }
             100% { transform: translateY(0px) rotate(0deg); }
+        }
+        /* ✨ MELHORIA: Animação de pulsar para o ícone de garantia */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
         }
         .floating-element {
             position: absolute;
@@ -94,7 +101,7 @@
         }
         .highlight { color: var(--pastel-pink); }
         .dark-section { background-color: var(--color-bg-dark); color: var(--color-text-light); }
-        .dark-section .section-title { color: var(--color-white); }
+        .dark-section .section-title { color: white; }
         .dark-section .section-subtitle { color: var(--color-text-subtle); }
 
         /* --- BOTÕES --- */
@@ -118,7 +125,7 @@
 
         /* --- SEÇÃO 1: HERO --- */
         .hero { text-align: center; padding: 40px 0; }
-        .hero .headline { font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 30px; }
+        .hero .headline { font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
         .hero .main-image { max-width: 100%; width: 500px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
         .hero .subheadline { font-size: 1.2rem; margin-bottom: 30px; }
         .hero-badge { display: inline-block; background-color: rgba(255,255,255,0.1); border-radius: 50px; padding: 10px 20px; font-weight: 600; margin-bottom: 30px; }
@@ -126,21 +133,23 @@
 
         /* --- SEÇÃO 2: DOR + SOLUÇÃO --- */
         .pain-list { list-style: none; max-width: 500px; margin: 0 auto 30px auto; }
-        .pain-list li { margin-bottom: 15px; font-size: 1.1rem; background: #fff; padding: 15px; border-radius: 12px; box-shadow: var(--shadow-soft); display: flex; align-items: center; gap: 15px; }
+        .pain-list li { margin-bottom: 15px; font-size: 1.1rem; background: #fff; padding: 15px; border-radius: 12px; box-shadow: var(--shadow-soft); display: flex; align-items: center; gap: 15px; border-left: 4px solid var(--pastel-pink); }
         .pain-list i { color: var(--pastel-pink); font-size: 1.5rem; }
         .solution-text { text-align: center; font-size: 1.2rem; font-weight: 600; max-width: 600px; margin: 40px auto 0 auto; }
 
         /* --- SEÇÃO 3: PRODUTO --- */
-        .product-images { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        .product-images img { max-width: 100%; width: 350px; border-radius: 15px; box-shadow: var(--shadow-soft); transform: rotate(-3deg); transition: transform 0.4s ease; }
+        .product-images { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+        .product-images img { max-width: 100%; width: 350px; border-radius: 15px; box-shadow: var(--shadow-soft); transform: rotate(-3deg); transition: transform 0.4s ease, box-shadow 0.4s ease; }
         .product-images img:last-child { transform: rotate(4deg); }
-        .product-images img:hover { transform: scale(1.05) rotate(0); }
+        .product-images img:hover { transform: scale(1.05) rotate(0); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
         /* --- SEÇÃO 3.1: PROVA SOCIAL --- */
-        .social-proof .carousel { /* Mesma lógica do anterior */ width: 100%; max-width: 1200px; margin: auto; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+        .social-proof .carousel { width: 100%; max-width: 1200px; margin: auto; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
         .social-proof .carousel-track { display: flex; width: calc(250px * 8); animation: scroll 30s linear infinite; }
         .social-proof .carousel-slide { width: 250px; flex-shrink: 0; padding: 0 15px; }
-        .social-proof .carousel-slide img { width: 100%; border-radius: 12px; border: 3px solid rgba(255,255,255,0.2); }
+        .social-proof .carousel-slide img { width: 100%; border-radius: 12px; border: 3px solid rgba(255,255,255,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        /* ✨ MELHORIA: Efeito de hover nos depoimentos */
+        .social-proof .carousel-slide:hover img { transform: scale(1.05); box-shadow: 0 0 15px rgba(253, 238, 148, 0.5); }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(calc(-250px * 4)); } }
         .social-proof .section-subtitle { color: var(--pastel-yellow); font-weight: 700; font-size: 1.5rem; }
         .social-proof .section-subtitle i { margin: 0 2px; }
@@ -154,40 +163,54 @@
         /* --- SEÇÃO 5: BÔNUS --- */
         .bonuses-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
         @media (min-width: 768px) { .bonuses-grid { grid-template-columns: repeat(3, 1fr); } }
-        .bonus-card { background-color: rgba(255,255,255,0.05); border: 2px dashed var(--pastel-yellow); padding: 30px 25px; border-radius: 15px; text-align: center; }
+        .bonus-card { background-color: rgba(255,255,255,0.05); border: 2px dashed var(--pastel-yellow); padding: 30px 25px; border-radius: 15px; text-align: center; transition: transform 0.3s ease, border-color 0.3s ease; }
+        /* ✨ MELHORIA: Efeito de hover nos cartões de bônus */
+        .bonus-card:hover { transform: translateY(-8px); border-color: white; }
         .bonus-card i { font-size: 3rem; color: var(--pastel-yellow); margin-bottom: 15px; }
-        .bonus-card h3 { font-size: 1.3rem; color: var(--color-white); }
+        .bonus-card h3 { font-size: 1.3rem; color: white; }
         
         /* --- SEÇÃO 7: ESCASSEZ --- */
-        .fomo { background-color: var(--pastel-lavender); }
+        .fomo { background-color: var(--pastel-lavender); padding: 20px; border-radius: 20px;}
         .fomo-box { background: rgba(255,255,255,0.3); border-radius: 15px; padding: 30px; text-align: center; max-width: 600px; margin: 0 auto; }
         .fomo-box p { font-size: 1.2rem; font-weight: 600; color: var(--color-bg-dark); }
         
         /* --- SEÇÃO 8: GARANTIA --- */
         .guarantee-box { max-width: 700px; margin: 0 auto; text-align: center; border: 3px solid var(--pastel-mint); padding: 40px; border-radius: 20px; background: #fff; box-shadow: var(--shadow-soft); }
-        .guarantee-box .icon { font-size: 4rem; color: var(--pastel-mint); }
+        .guarantee-box .icon { font-size: 4rem; color: var(--pastel-mint); animation: pulse 2s infinite ease-in-out; }
 
         /* --- SEÇÃO 9: OFERTA FINAL --- */
         .offer-card { background-color: rgba(255,255,255,0.1); border: 2px solid var(--pastel-pink); box-shadow: var(--shadow-glow); border-radius: 20px; max-width: 700px; margin: 0 auto; padding: 30px; text-align: center; }
         .offer-card .price { margin: 20px 0; }
         .offer-card .old-price { font-size: 1.5rem; text-decoration: line-through; color: var(--color-text-subtle); }
-        .offer-card .new-price { font-size: 3.5rem; font-weight: 900; color: var(--color-white); }
+        .offer-card .new-price { font-size: 3.5rem; font-weight: 900; color: white; }
         .offer-list { list-style: none; text-align: left; margin: 30px auto; max-width: 350px; }
         .offer-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .offer-list i { color: var(--pastel-mint); }
         .licenses-left { display: inline-block; background: rgba(255,192,203,0.2); color: var(--pastel-pink); padding: 8px 15px; border-radius: 50px; font-weight: 700; margin-bottom: 30px; }
         
         /* --- SEÇÃO 11: FAQ --- */
-        .faq-item { background: var(--color-white); padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: var(--shadow-soft); }
+        .faq-item { background: var(--color-white); padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: var(--shadow-soft); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        /* ✨ MELHORIA: Efeito de hover nas perguntas do FAQ */
+        .faq-item:hover { transform: scale(1.03); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
         .faq-item h3 { font-weight: 700; margin-bottom: 10px; color: var(--color-bg-dark); }
         .faq-item h3 i { color: var(--pastel-lavender); margin-right: 10px; }
 
         /* --- RODAPÉ --- */
         .footer { padding-bottom: 20px; text-align: center; color: var(--color-text-subtle); }
-        .footer .logo { max-height: 40px; opacity: 0.7; margin-bottom: 15px; }
-        .footer-socials a { color: var(--color-text-subtle); margin: 0 10px; font-size: 1.5rem; transition: color 0.3s ease; }
-        .footer-socials a:hover { color: var(--pastel-pink); }
+        .footer .logo { max-height: 50px; opacity: 0.8; margin-bottom: 15px; } /* ✨ AJUSTE: Altura da nova logo */
         .footer p { font-size: 0.9rem; margin-top: 20px; }
+
+        /* --- AJUSTES RESPONSIVOS --- */
+        @media (max-width: 768px) {
+            .hero .headline { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .product-images { flex-direction: column; align-items: center; }
+            .product-images img { transform: rotate(0); margin-bottom: 20px; }
+            .product-images img:last-child { transform: rotate(0); }
+            .fomo { padding: 10px; }
+            .fomo-box { padding: 20px; }
+            .offer-card .new-price { font-size: 3rem; }
+        }
 
     </style>
 </head>
@@ -197,21 +220,19 @@
     <section class="hero dark-section">
         <div class="container">
             <h1 class="headline">American moms are in shock:<br>This <span class="highlight">“magic book”</span> is getting kids off screens in just 48 hours.</h1>
-
             <img src="https://i.imgur.com/7AyRU6B.png" alt="Happy child playing with educational toys" class="main-image">
-            
             <p class="subheadline">No yelling, no punishment, no therapy.<br>And you can get instant access right now, for just $10.</p>
             <div class="hero-badge">
                 <i class="fas fa-bolt"></i> Instant delivery + lifetime access
             </div>
             <br>
+            <!-- CORREÇÃO: O link já funcionava, mas confirmei que o ID de destino está correto -->
             <a href="#final-offer-cta" class="cta-button">I WANT ACCESS NOW</a>
         </div>
         <!-- Elementos Flutuantes -->
         <i class="fas fa-star floating-element star1"></i>
         <i class="fas fa-plus floating-element star2"></i>
         <i class="far fa-circle floating-element star3"></i>
-        
         <!-- Divisor de Onda -->
         <div class="wave-divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--color-bg-light);">
@@ -389,15 +410,12 @@
     </section>
     
     <!-- FOOTER -->
-    <footer class="footer dark-section" style="padding-top: 120px;"> <!-- Padding top para compensar a onda da seção anterior -->
+    <footer class="footer dark-section" style="padding-top: 120px;">
         <div class="container">
-            <img src="https://i.imgur.com/U2vcds4.png" alt="BrincaLivre Logo" class="logo">
-            <div class="footer-socials">
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
-            </div>
-            <p>© 2024 BrincaLivre. All rights reserved.<br>A magical way to play and learn.</p>
+            <!-- ✨ MUDANÇA: Nova logo para "The Magic Book" -->
+            <img src="https://i.imgur.com/r3gXJt9.png" alt="The Magic Book Logo" class="logo">
+            <!-- ✨ MUDANÇA: Remoção dos ícones de redes sociais -->
+            <p>© 2024 The Magic Book. All rights reserved.<br>A magical way to play and learn.</p>
         </div>
     </footer>
 
