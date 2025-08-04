@@ -75,7 +75,7 @@
             overflow: hidden;
             line-height: 0;
             transform: rotate(180deg);
-            z-index: 1; /* ✅ CORREÇÃO: Garante que a onda fique abaixo do conteúdo */
+            z-index: 1; /* Garante que a onda fique abaixo do conteúdo */
         }
         .wave-divider svg {
             position: relative;
@@ -124,7 +124,6 @@
 
         /* --- SEÇÃO 1: HERO --- */
         .hero { text-align: center; padding: 40px 0; }
-        /* ✅ CORREÇÃO: Adicionada classe para controlar o z-index do conteúdo do hero */
         .hero-content {
             position: relative;
             z-index: 2;
@@ -163,6 +162,16 @@
         .what-you-get-list i { font-size: 1.5rem; color: var(--pastel-mint); }
         .value-proposition { text-align: center; background: linear-gradient(45deg, var(--pastel-mint), var(--pastel-lavender)); color: var(--color-bg-dark); padding: 20px; border-radius: 15px; font-weight: 700; max-width: 600px; margin: 40px auto 0 auto; }
         
+        /* ✅ NOVA SEÇÃO: ESTILO PARA A IMAGEM DA COMUNIDADE */
+        .community-image {
+            display: block;
+            max-width: 100%;
+            width: 800px; 
+            margin: 20px auto 0 auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+        }
+
         /* --- SEÇÃO 5: BÔNUS --- */
         .bonuses-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
         @media (min-width: 768px) { .bonuses-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -219,7 +228,6 @@
 
     <!-- SECTION 1 – HERO -->
     <section class="hero dark-section">
-        <!-- ✅ CORREÇÃO: Conteúdo envolvido em uma div para controlar a sobreposição -->
         <div class="hero-content">
             <div class="container">
                 <h1 class="headline">American moms are in shock:<br>This <span class="highlight">“magic book”</span> is getting kids off screens in just 48 hours.</h1>
@@ -232,19 +240,15 @@
                 <a href="#final-offer-cta" class="cta-button">I WANT ACCESS NOW</a>
             </div>
         </div>
-        <!-- Elementos Flutuantes -->
         <i class="fas fa-star floating-element star1"></i>
         <i class="fas fa-plus floating-element star2"></i>
         <i class="far fa-circle floating-element star3"></i>
-        <!-- Divisor de Onda -->
         <div class="wave-divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--color-bg-light);">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,23.5V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
             </svg>
         </div>
     </section>
-
-    <!-- O RESTO DA PÁGINA PERMANECE IGUAL, ATÉ O RODAPÉ -->
 
     <!-- SECTION 2 – PAIN + SOLUTION -->
     <section class="pain-solution">
@@ -313,6 +317,17 @@
         </div>
     </section>
     
+    <!-- ✅ NOVA SEÇÃO: COMUNIDADE -->
+    <section class="community-section">
+        <div class="container">
+            <h2 class="section-title">Join Our Magical Community</h2>
+            <img src="https://i.imgur.com/39aC7Cg.png" alt="Mothers and children sharing activities on Instagram" class="community-image">
+            <p class="section-subtitle" style="margin-top: 30px; font-weight: 600; max-width: 600px;">
+                Become part of our community of moms! Share your creations on Instagram and tag us.
+            </p>
+        </div>
+    </section>
+
     <!-- SECTION 5 – EXCLUSIVE BONUSES -->
     <section class="bonuses dark-section">
         <div class="container">
@@ -422,7 +437,6 @@
     <!-- FOOTER -->
     <footer class="footer dark-section" style="padding-top: 120px;">
         <div class="container">
-            <!-- ✅ CORREÇÃO: Logo agora é clicável e leva para o topo da página (#) -->
             <a href="#">
                 <img src="https://i.imgur.com/r3gXJt9.png" alt="The Magic Book Logo" class="logo">
             </a>
