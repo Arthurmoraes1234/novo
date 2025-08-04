@@ -139,6 +139,41 @@
         .pain-list li { margin-bottom: 15px; font-size: 1.1rem; background: #fff; padding: 15px; border-radius: 12px; box-shadow: var(--shadow-soft); display: flex; align-items: center; gap: 15px; border-left: 4px solid var(--pastel-pink); }
         .pain-list i { color: var(--pastel-pink); font-size: 1.5rem; }
         .solution-text { text-align: center; font-size: 1.2rem; font-weight: 600; max-width: 600px; margin: 40px auto 0 auto; }
+        
+        /* ✅ NOVO CSS: ESTILOS PARA O VÍDEO E BOTÃO */
+        .video-container {
+            position: relative;
+            max-width: 600px;
+            margin: 40px auto;
+            border-radius: 15px;
+            overflow: hidden; /* Garante que o vídeo fique com as bordas arredondadas */
+            box-shadow: var(--shadow-soft);
+        }
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+        #unmute-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transition: background-color 0.3s ease;
+        }
+        #unmute-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
         /* --- SEÇÃO 3: PRODUTO --- */
         .product-images { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
@@ -221,6 +256,7 @@
             .fomo { padding: 10px; }
             .fomo-box { padding: 20px; }
             .offer-card .new-price { font-size: 3rem; }
+            #unmute-button { width: 40px; height: 40px; font-size: 1.2rem; bottom: 10px; right: 10px;}
         }
     </style>
 </head>
@@ -260,6 +296,14 @@
                 <li><i class="fas fa-heart-broken"></i> Feels like the tablet became the official babysitter?</li>
             </ul>
             <p class="solution-text">You’re not alone.<br>Over <span style="color:var(--pastel-mint); font-weight:700;">43,000 moms</span> have been through this — and they all found the same solution.</p>
+            
+            <!-- ✅ NOVO HTML: VÍDEO PLAYER ADICIONADO AQUI -->
+            <div class="video-container">
+                <video id="vsl-video" src="https://video.wixstatic.com/video/512b9f_ac37a61a1aed45748dfa627bc6c2c070/1080p/mp4/file.mp4" autoplay muted loop playsinline></video>
+                <button id="unmute-button">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -321,7 +365,6 @@
     <section class="community-section">
         <div class="container">
             <h2 class="section-title">Join Our Magical Community</h2>
-            <!-- ✅ IMAGEM ATUALIZADA AQUI -->
             <img src="https://i.imgur.com/7rtYqOn.jpeg" alt="Mothers and children sharing activities on Instagram" class="community-image">
             <p class="section-subtitle" style="margin-top: 30px; font-weight: 600; max-width: 600px;">
                 Become part of our community of moms! Share your creations on Instagram and tag us.
@@ -438,9 +481,31 @@
     <!-- FOOTER -->
     <footer class="footer dark-section" style="padding-top: 120px;">
         <div class="container">
+            <a href="#">
+                <img src="https://i.imgur.com/r3gXJt9.png" alt="The Magic Book Logo" class="logo">
+            </a>
             <p>© 2024 The Magic Book. All rights reserved.<br>A magical way to play and learn.</p>
         </div>
     </footer>
+
+    <!-- ✅ NOVO JAVASCRIPT: SCRIPT PARA CONTROLAR O SOM DO VÍDEO -->
+    <script>
+        const video = document.getElementById('vsl-video');
+        const unmuteButton = document.getElementById('unmute-button');
+        const icon = unmuteButton.querySelector('i');
+
+        unmuteButton.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+            } else {
+                video.muted = true;
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+            }
+        });
+    </script>
 
 </body>
 </html>
