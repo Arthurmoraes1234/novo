@@ -75,6 +75,7 @@
             overflow: hidden;
             line-height: 0;
             transform: rotate(180deg);
+            z-index: 1; /* ✅ CORREÇÃO: Garante que a onda fique abaixo do conteúdo */
         }
         .wave-divider svg {
             position: relative;
@@ -123,6 +124,11 @@
 
         /* --- SEÇÃO 1: HERO --- */
         .hero { text-align: center; padding: 40px 0; }
+        /* ✅ CORREÇÃO: Adicionada classe para controlar o z-index do conteúdo do hero */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
         .hero .headline { font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
         .hero .main-image { max-width: 100%; width: 500px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
         .hero .subheadline { font-size: 1.2rem; margin-bottom: 30px; }
@@ -192,7 +198,8 @@
 
         /* --- RODAPÉ --- */
         .footer { padding-bottom: 20px; text-align: center; color: var(--color-text-subtle); }
-        .footer .logo { max-height: 50px; opacity: 0.8; margin-bottom: 15px; }
+        .footer .logo { max-height: 50px; opacity: 0.8; margin-bottom: 15px; transition: opacity 0.3s ease; }
+        .footer .logo:hover { opacity: 1; }
         .footer p { font-size: 0.9rem; margin-top: 20px; }
 
         /* --- AJUSTES RESPONSIVOS --- */
@@ -206,23 +213,24 @@
             .fomo-box { padding: 20px; }
             .offer-card .new-price { font-size: 3rem; }
         }
-
     </style>
 </head>
 <body>
 
     <!-- SECTION 1 – HERO -->
     <section class="hero dark-section">
-        <div class="container">
-            <h1 class="headline">American moms are in shock:<br>This <span class="highlight">“magic book”</span> is getting kids off screens in just 48 hours.</h1>
-            <img src="https://i.imgur.com/7AyRU6B.png" alt="Happy child playing with educational toys" class="main-image">
-            <p class="subheadline">No yelling, no punishment, no therapy.<br>And you can get instant access right now, for just $10.</p>
-            <div class="hero-badge">
-                <i class="fas fa-bolt"></i> Instant delivery + lifetime access
+        <!-- ✅ CORREÇÃO: Conteúdo envolvido em uma div para controlar a sobreposição -->
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="headline">American moms are in shock:<br>This <span class="highlight">“magic book”</span> is getting kids off screens in just 48 hours.</h1>
+                <img src="https://i.imgur.com/7AyRU6B.png" alt="Happy child playing with educational toys" class="main-image">
+                <p class="subheadline">No yelling, no punishment, no therapy.<br>And you can get instant access right now, for just $10.</p>
+                <div class="hero-badge">
+                    <i class="fas fa-bolt"></i> Instant delivery + lifetime access
+                </div>
+                <br>
+                <a href="#final-offer-cta" class="cta-button">I WANT ACCESS NOW</a>
             </div>
-            <br>
-            <!-- ✅ AJUSTE: Botão leva para a seção de oferta -->
-            <a href="#final-offer-cta" class="cta-button">I WANT ACCESS NOW</a>
         </div>
         <!-- Elementos Flutuantes -->
         <i class="fas fa-star floating-element star1"></i>
@@ -235,6 +243,8 @@
             </svg>
         </div>
     </section>
+
+    <!-- O RESTO DA PÁGINA PERMANECE IGUAL, ATÉ O RODAPÉ -->
 
     <!-- SECTION 2 – PAIN + SOLUTION -->
     <section class="pain-solution">
@@ -258,7 +268,6 @@
                 <img src="https://i.imgur.com/7dGudBS.png" alt="Cover of the 365+ Educational Activities book">
                 <img src="https://i.imgur.com/rHXeAkr.png" alt="Inside pages of the educational activities book">
             </div>
-             <!-- ✅ NOVO BOTÃO: Adicionado após a apresentação do produto -->
             <div style="text-align: center; margin-top: 50px;">
                 <a href="#final-offer-cta" class="cta-button">YES, I WANT THIS BOOK!</a>
             </div>
@@ -325,7 +334,6 @@
                     <p>Fun and creative characters to print, color, and play with.</p>
                 </div>
             </div>
-            <!-- ✅ NOVO BOTÃO: Adicionado após os bônus para reforçar o valor -->
             <div style="text-align: center; margin-top: 60px;">
                 <a href="#final-offer-cta" class="cta-button">Claim My Book + 3 Free Bonuses</a>
             </div>
@@ -340,25 +348,21 @@
     <!-- SECTION 6, 7 & 8 -->
     <section class="more-info">
         <div class="container">
-            <!-- Why it works -->
             <div style="text-align: center; max-width: 800px; margin: 0 auto 80px auto;">
                 <h2 class="section-title">Why this method works<br>(even when nothing else does)</h2>
                 <p style="font-size: 1.1rem;">This material activates areas of the brain linked to <span style="color:var(--pastel-mint); font-weight:700;">focus and independence</span>. It’s like your child’s brain gets “reset” and learns how to entertain themselves without a phone, YouTube, or tablet.</p>
             </div>
-            <!-- FOMO -->
             <div class="fomo">
                 <div class="fomo-box">
                     <h2 class="section-title" style="color: var(--color-bg-dark); font-size: 1.8rem; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> This is the last time you’ll see this offer.</h2>
                     <p>Only <span style="font-size: 1.5em; font-weight: 900;">47</span> digital licenses left today. Once you leave this page, the offer disappears.</p>
                 </div>
             </div>
-            <!-- Guarantee -->
             <div class="guarantee-box" style="margin-top: 80px;">
                 <i class="fas fa-shield-alt icon"></i>
                 <h2 class="section-title">30-day full guarantee</h2>
                 <p>Try it for 30 days. If you don’t see your child playing alone, less agitated, and more creative, we’ll refund 100% of your money. No questions. No excuses.</p>
             </div>
-             <!-- ✅ NOVO BOTÃO: Adicionado após a garantia para quebrar a última objeção -->
             <div style="text-align: center; margin-top: 50px;">
                 <a href="#final-offer-cta" class="cta-button">Start My Risk-Free Access</a>
             </div>
@@ -382,7 +386,6 @@
                     <li><i class="fas fa-check-circle"></i> One-time payment, no subscription</li>
                 </ul>
                 <div class="licenses-left">⚠️ Only 47 licenses left</div>
-                <!-- ✅ AJUSTE: Link de checkout inserido aqui -->
                 <a href="https://expressbellavita.systeme.io/paystripe1" class="cta-button">I WANT TO BUY NOW</a>
             </div>
         </div>
@@ -419,7 +422,10 @@
     <!-- FOOTER -->
     <footer class="footer dark-section" style="padding-top: 120px;">
         <div class="container">
-            <img src="https://i.imgur.com/r3gXJt9.png" alt="The Magic Book Logo" class="logo">
+            <!-- ✅ CORREÇÃO: Logo agora é clicável e leva para o topo da página (#) -->
+            <a href="#">
+                <img src="https://i.imgur.com/r3gXJt9.png" alt="The Magic Book Logo" class="logo">
+            </a>
             <p>© 2024 The Magic Book. All rights reserved.<br>A magical way to play and learn.</p>
         </div>
     </footer>
