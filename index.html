@@ -39,7 +39,6 @@
         body {
             font-family: var(--font-main);
             color: var(--color-text-dark);
-            /* ✨ MELHORIA: Fundo com gradiente suave para mais profundidade */
             background: linear-gradient(180deg, var(--color-bg-light) 0%, #eef2f9 100%);
             overflow-x: hidden; /* Previne scroll horizontal das animações */
         }
@@ -52,7 +51,6 @@
             50% { transform: translateY(-20px) rotate(10deg); }
             100% { transform: translateY(0px) rotate(0deg); }
         }
-        /* ✨ MELHORIA: Animação de pulsar para o ícone de garantia */
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.08); }
@@ -148,7 +146,6 @@
         .social-proof .carousel-track { display: flex; width: calc(250px * 8); animation: scroll 30s linear infinite; }
         .social-proof .carousel-slide { width: 250px; flex-shrink: 0; padding: 0 15px; }
         .social-proof .carousel-slide img { width: 100%; border-radius: 12px; border: 3px solid rgba(255,255,255,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        /* ✨ MELHORIA: Efeito de hover nos depoimentos */
         .social-proof .carousel-slide:hover img { transform: scale(1.05); box-shadow: 0 0 15px rgba(253, 238, 148, 0.5); }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(calc(-250px * 4)); } }
         .social-proof .section-subtitle { color: var(--pastel-yellow); font-weight: 700; font-size: 1.5rem; }
@@ -164,7 +161,6 @@
         .bonuses-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
         @media (min-width: 768px) { .bonuses-grid { grid-template-columns: repeat(3, 1fr); } }
         .bonus-card { background-color: rgba(255,255,255,0.05); border: 2px dashed var(--pastel-yellow); padding: 30px 25px; border-radius: 15px; text-align: center; transition: transform 0.3s ease, border-color 0.3s ease; }
-        /* ✨ MELHORIA: Efeito de hover nos cartões de bônus */
         .bonus-card:hover { transform: translateY(-8px); border-color: white; }
         .bonus-card i { font-size: 3rem; color: var(--pastel-yellow); margin-bottom: 15px; }
         .bonus-card h3 { font-size: 1.3rem; color: white; }
@@ -190,14 +186,13 @@
         
         /* --- SEÇÃO 11: FAQ --- */
         .faq-item { background: var(--color-white); padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: var(--shadow-soft); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        /* ✨ MELHORIA: Efeito de hover nas perguntas do FAQ */
         .faq-item:hover { transform: scale(1.03); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
         .faq-item h3 { font-weight: 700; margin-bottom: 10px; color: var(--color-bg-dark); }
         .faq-item h3 i { color: var(--pastel-lavender); margin-right: 10px; }
 
         /* --- RODAPÉ --- */
         .footer { padding-bottom: 20px; text-align: center; color: var(--color-text-subtle); }
-        .footer .logo { max-height: 50px; opacity: 0.8; margin-bottom: 15px; } /* ✨ AJUSTE: Altura da nova logo */
+        .footer .logo { max-height: 50px; opacity: 0.8; margin-bottom: 15px; }
         .footer p { font-size: 0.9rem; margin-top: 20px; }
 
         /* --- AJUSTES RESPONSIVOS --- */
@@ -226,7 +221,7 @@
                 <i class="fas fa-bolt"></i> Instant delivery + lifetime access
             </div>
             <br>
-            <!-- CORREÇÃO: O link já funcionava, mas confirmei que o ID de destino está correto -->
+            <!-- ✅ AJUSTE: Botão leva para a seção de oferta -->
             <a href="#final-offer-cta" class="cta-button">I WANT ACCESS NOW</a>
         </div>
         <!-- Elementos Flutuantes -->
@@ -262,6 +257,10 @@
             <div class="product-images">
                 <img src="https://i.imgur.com/7dGudBS.png" alt="Cover of the 365+ Educational Activities book">
                 <img src="https://i.imgur.com/rHXeAkr.png" alt="Inside pages of the educational activities book">
+            </div>
+             <!-- ✅ NOVO BOTÃO: Adicionado após a apresentação do produto -->
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#final-offer-cta" class="cta-button">YES, I WANT THIS BOOK!</a>
             </div>
         </div>
     </section>
@@ -326,6 +325,10 @@
                     <p>Fun and creative characters to print, color, and play with.</p>
                 </div>
             </div>
+            <!-- ✅ NOVO BOTÃO: Adicionado após os bônus para reforçar o valor -->
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#final-offer-cta" class="cta-button">Claim My Book + 3 Free Bonuses</a>
+            </div>
         </div>
         <div class="wave-divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--color-bg-light);">
@@ -355,6 +358,10 @@
                 <h2 class="section-title">30-day full guarantee</h2>
                 <p>Try it for 30 days. If you don’t see your child playing alone, less agitated, and more creative, we’ll refund 100% of your money. No questions. No excuses.</p>
             </div>
+             <!-- ✅ NOVO BOTÃO: Adicionado após a garantia para quebrar a última objeção -->
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#final-offer-cta" class="cta-button">Start My Risk-Free Access</a>
+            </div>
         </div>
     </section>
 
@@ -375,8 +382,8 @@
                     <li><i class="fas fa-check-circle"></i> One-time payment, no subscription</li>
                 </ul>
                 <div class="licenses-left">⚠️ Only 47 licenses left</div>
-                <!-- SUBSTITUA '#' PELO SEU LINK DE CHECKOUT -->
-                <a href="#" class="cta-button">I WANT TO BUY NOW</a>
+                <!-- ✅ AJUSTE: Link de checkout inserido aqui -->
+                <a href="https://expressbellavita.systeme.io/paystripe1" class="cta-button">I WANT TO BUY NOW</a>
             </div>
         </div>
         <div class="wave-divider">
@@ -412,9 +419,7 @@
     <!-- FOOTER -->
     <footer class="footer dark-section" style="padding-top: 120px;">
         <div class="container">
-            <!-- ✨ MUDANÇA: Nova logo para "The Magic Book" -->
             <img src="https://i.imgur.com/r3gXJt9.png" alt="The Magic Book Logo" class="logo">
-            <!-- ✨ MUDANÇA: Remoção dos ícones de redes sociais -->
             <p>© 2024 The Magic Book. All rights reserved.<br>A magical way to play and learn.</p>
         </div>
     </footer>
