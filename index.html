@@ -13,6 +13,44 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
+    <!-- ✅ SCRIPTS DE RASTREAMENTO ADICIONADOS AQUI -->
+
+    <!-- Utimify Script -->
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
+
+    <!-- Meta Pixel Code (Facebook) -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3363795970430012');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=3363795970430012&ev=PageView&noscript=1"/>
+    </noscript>
+
+    <!-- Microsoft Clarity Script -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "r8fcmye1fm");
+    </script>
+
     <style>
         /* --- DESIGN SYSTEM & VARIABLES --- */
         :root {
@@ -140,13 +178,12 @@
         .pain-list i { color: var(--pastel-pink); font-size: 1.5rem; }
         .solution-text { text-align: center; font-size: 1.2rem; font-weight: 600; max-width: 600px; margin: 40px auto 0 auto; }
         
-        /* ✅ NOVO CSS: ESTILOS PARA O VÍDEO E BOTÃO */
         .video-container {
             position: relative;
             max-width: 600px;
             margin: 40px auto;
             border-radius: 15px;
-            overflow: hidden; /* Garante que o vídeo fique com as bordas arredondadas */
+            overflow: hidden; 
             box-shadow: var(--shadow-soft);
         }
         .video-container video {
@@ -297,7 +334,6 @@
             </ul>
             <p class="solution-text">You’re not alone.<br>Over <span style="color:var(--pastel-mint); font-weight:700;">43,000 moms</span> have been through this — and they all found the same solution.</p>
             
-            <!-- ✅ NOVO HTML: VÍDEO PLAYER ADICIONADO AQUI -->
             <div class="video-container">
                 <video id="vsl-video" src="https://video.wixstatic.com/video/512b9f_ac37a61a1aed45748dfa627bc6c2c070/1080p/mp4/file.mp4" autoplay muted loop playsinline></video>
                 <button id="unmute-button">
@@ -445,7 +481,8 @@
                     <li><i class="fas fa-check-circle"></i> One-time payment, no subscription</li>
                 </ul>
                 <div class="licenses-left">⚠️ Only 47 licenses left</div>
-                <a href="https://expressbellavita.systeme.io/paystripe1" class="cta-button">I WANT TO BUY NOW</a>
+                <!-- ✅ EVENTO InitiateCheckout ADICIONADO AQUI -->
+                <a href="https://expressbellavita.systeme.io/paystripe1" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">I WANT TO BUY NOW</a>
             </div>
         </div>
         <div class="wave-divider">
@@ -480,11 +517,14 @@
     
     <!-- FOOTER -->
     <footer class="footer dark-section" style="padding-top: 120px;">
+        <div class="container">
+            <a href="#">
+                <img src="https://i.imgur.com/r3gXJt9.png" alt="The Magic Book Logo" class="logo">
+            </a>
             <p>© 2024 The Magic Book. All rights reserved.<br>A magical way to play and learn.</p>
         </div>
     </footer>
 
-    <!-- ✅ NOVO JAVASCRIPT: SCRIPT PARA CONTROLAR O SOM DO VÍDEO -->
     <script>
         const video = document.getElementById('vsl-video');
         const unmuteButton = document.getElementById('unmute-button');
