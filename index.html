@@ -141,6 +141,14 @@
         .dark-section .section-title { color: white; }
         .dark-section .section-subtitle { color: var(--color-text-subtle); }
 
+        /* ✅ ESTILO ADICIONADO PARA O PREÇO */
+        .price-highlight {
+            font-weight: 900;
+            font-size: 1.8em;
+            color: var(--pastel-yellow);
+            vertical-align: middle;
+        }
+        
         /* --- BOTÕES --- */
         .cta-button {
             display: inline-block;
@@ -303,9 +311,11 @@
     <section class="hero dark-section">
         <div class="hero-content">
             <div class="container">
-                <h1 class="headline">American moms are in shock:<br>This <span class="highlight">“magic book”</span> is getting kids off screens in just 48 hours.</h1>
+                <!-- ✅ TÍTULO ALTERADO AQUI -->
+                <h1 class="headline">American moms are in shock:<br>This <span class="highlight">“magic book”</span> is getting kids off screens in just 24 hours.</h1>
                 <img src="https://i.imgur.com/7AyRU6B.png" alt="Happy child playing with educational toys" class="main-image">
-                <p class="subheadline">No yelling, no punishment, no therapy.<br>And you can get instant access right now, for just $10.</p>
+                <!-- ✅ TEXTO COM DESTAQUE NO PREÇO ALTERADO AQUI -->
+                <p class="subheadline">No yelling, no punishment, no therapy.<br>And you can get instant access right now, for just <span class="price-highlight">$10</span>.</p>
                 <div class="hero-badge">
                     <i class="fas fa-bolt"></i> Instant delivery + lifetime access
                 </div>
