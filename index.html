@@ -13,7 +13,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-    <!-- ✅ SCRIPTS DE RASTREAMENTO E VSL ADICIONADOS AQUI -->
+    <!-- ✅ SCRIPTS DE RASTREAMENTO ADICIONADOS AQUI -->
 
     <!-- Utimify Script -->
     <script
@@ -50,9 +50,6 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "r8fcmye1fm");
     </script>
-    
-    <!-- ✅ SCRIPT DA VSL (CONVERTE.AI) -->
-    <script type="text/javascript" src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js" async></script>
 
     <style>
         /* --- DESIGN SYSTEM & VARIABLES --- */
@@ -143,6 +140,8 @@
         .dark-section { background-color: var(--color-bg-dark); color: var(--color-text-light); }
         .dark-section .section-title { color: white; }
         .dark-section .section-subtitle { color: var(--color-text-subtle); }
+
+        /* ✅ ESTILO ADICIONADO PARA O PREÇO */
         .price-highlight {
             font-weight: 900;
             font-size: 1.8em;
@@ -176,6 +175,7 @@
             z-index: 2;
         }
         .hero .headline { font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .hero .main-image { max-width: 100%; width: 500px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
         .hero .subheadline { font-size: 1.2rem; margin-bottom: 30px; }
         .hero-badge { display: inline-block; background-color: rgba(255,255,255,0.1); border-radius: 50px; padding: 10px 20px; font-weight: 600; margin-bottom: 30px; }
         .hero-badge i { color: var(--pastel-yellow); margin-right: 8px; }
@@ -186,17 +186,38 @@
         .pain-list i { color: var(--pastel-pink); font-size: 1.5rem; }
         .solution-text { text-align: center; font-size: 1.2rem; font-weight: 600; max-width: 600px; margin: 40px auto 0 auto; }
         
-        /* ✅ ESTILO GENÉRICO PARA CONTAINER DE MÍDIA (IMAGEM/VÍDEO) */
-        .media-container {
+        .video-container {
+            position: relative;
             max-width: 600px;
             margin: 40px auto;
             border-radius: 15px;
             overflow: hidden; 
             box-shadow: var(--shadow-soft);
         }
-        .media-container img {
+        .video-container video {
             width: 100%;
             display: block;
+        }
+        #unmute-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transition: background-color 0.3s ease;
+        }
+        #unmute-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
         /* --- SEÇÃO 3: PRODUTO --- */
@@ -259,13 +280,15 @@
         .licenses-left { display: inline-block; background: rgba(255,192,203,0.2); color: var(--pastel-pink); padding: 8px 15px; border-radius: 50px; font-weight: 700; margin-bottom: 30px; }
         
         /* --- SEÇÃO 11: FAQ --- */
-        .faq-item { background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: var(--shadow-soft); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .faq-item { background: var(--color-white); padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: var(--shadow-soft); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .faq-item:hover { transform: scale(1.03); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
         .faq-item h3 { font-weight: 700; margin-bottom: 10px; color: var(--color-bg-dark); }
         .faq-item h3 i { color: var(--pastel-lavender); margin-right: 10px; }
 
         /* --- RODAPÉ --- */
         .footer { padding-bottom: 20px; text-align: center; color: var(--color-text-subtle); }
+        .footer .logo { max-height: 50px; opacity: 0.8; margin-bottom: 15px; transition: opacity 0.3s ease; }
+        .footer .logo:hover { opacity: 1; }
         .footer p { font-size: 0.9rem; margin-top: 20px; }
 
         /* --- AJUSTES RESPONSIVOS --- */
@@ -278,6 +301,7 @@
             .fomo { padding: 10px; }
             .fomo-box { padding: 20px; }
             .offer-card .new-price { font-size: 3rem; }
+            #unmute-button { width: 40px; height: 40px; font-size: 1.2rem; bottom: 10px; right: 10px;}
         }
     </style>
 </head>
@@ -287,15 +311,10 @@
     <section class="hero dark-section">
         <div class="hero-content">
             <div class="container">
+                <!-- ✅ TÍTULO ALTERADO AQUI -->
                 <h1 class="headline">American moms are in shock:<br>This <span class="highlight">“magic book”</span> is getting kids off screens in just 24 hours.</h1>
-                
-                <!-- ✅ VSL DO CONVERTE.AI INSERIDA AQUI -->
-                <div id="ifr_689669ae49028fb3642cd405_wrapper" style="margin: 0 auto 30px; width: 100%; max-width: 550px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
-                    <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_689669ae49028fb3642cd405_aspect">
-                        <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_689669ae49028fb3642cd405" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null, this.src='https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/689669ae49028fb3642cd405/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe>
-                    </div>
-                </div>
-                
+                <img src="https://i.imgur.com/7AyRU6B.png" alt="Happy child playing with educational toys" class="main-image">
+                <!-- ✅ TEXTO COM DESTAQUE NO PREÇO ALTERADO AQUI -->
                 <p class="subheadline">No yelling, no punishment, no therapy.<br>And you can get instant access right now, for just <span class="price-highlight">$10</span>.</p>
                 <div class="hero-badge">
                     <i class="fas fa-bolt"></i> Instant delivery + lifetime access
@@ -325,9 +344,11 @@
             </ul>
             <p class="solution-text">You’re not alone.<br>Over <span style="color:var(--pastel-mint); font-weight:700;">43,000 moms</span> have been through this — and they all found the same solution.</p>
             
-            <!-- ✅ IMAGEM (QUE ESTAVA NA SEÇÃO 1) INSERIDA AQUI -->
-            <div class="media-container">
-                <img src="https://i.imgur.com/7AyRU6B.png" alt="Happy child playing with educational toys">
+            <div class="video-container">
+                <video id="vsl-video" src="https://video.wixstatic.com/video/512b9f_ac37a61a1aed45748dfa627bc6c2c070/1080p/mp4/file.mp4" autoplay muted loop playsinline></video>
+                <button id="unmute-button">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -511,7 +532,23 @@
         </div>
     </footer>
 
-    <!-- ✅ SCRIPT DO VÍDEO ANTIGO REMOVIDO -->
+    <script>
+        const video = document.getElementById('vsl-video');
+        const unmuteButton = document.getElementById('unmute-button');
+        const icon = unmuteButton.querySelector('i');
+
+        unmuteButton.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+            } else {
+                video.muted = true;
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+            }
+        });
+    </script>
 
 </body>
 </html>
