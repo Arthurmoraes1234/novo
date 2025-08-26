@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>365+ Educational Activities - The Magic Book</title>
+    <title>Método Mochi Lucrativo</title>
 
-    <!-- Google Fonts: Poppins -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- ✅ SCRIPTS DE RASTREAMENTO ADICIONADOS AQUI -->
+    <!-- SCRIPT CLARITY -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "r6sxt9hlrm");
+    </script>
 
-    <!-- Utimify Script -->
+    <!-- SCRIPT UTMIFY -->
 <script
   src="https://cdn.utmify.com.br/scripts/utms/latest.js"
   data-utmify-prevent-xcod-sck
@@ -26,529 +33,384 @@
   defer
 ></script>
 
-    <!-- Meta Pixel Code (Facebook) -->
+    <!-- SCRIPT PIXEL FACEBOOK -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '3363795970430012');
-        fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1451346126115884');
+    fbq('track', 'PageView');
     </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=3363795970430012&ev=PageView&noscript=1"/>
-    </noscript>
-
-    <!-- Microsoft Clarity Script -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "r8fcmye1fm");
-    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1451346126115884&ev=PageView&noscript=1"
+    /></noscript>
 
     <style>
-        /* --- DESIGN SYSTEM & VARIABLES --- */
+        /* --- Reset and Base Styles --- */
         :root {
-            --color-bg-dark: #0a192f; /* Azul Marinho Profundo */
-            --color-bg-light: #f7faff; /* Branco com um toque de azul */
-            --color-text-light: #ccd6f6; /* Texto claro para fundo escuro */
-            --color-text-dark: #334155;  /* Texto escuro para fundo claro */
-            --color-text-subtle: #8892b0; /* Texto secundário */
-
-            /* Paleta Pastel Mágica */
-            --pastel-pink: #FFC0CB;
-            --pastel-yellow: #FDEE94;
-            --pastel-mint: #A7D7C5;
-            --pastel-lavender: #D8B4FE;
-
-            --font-main: 'Poppins', sans-serif;
-            --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.1);
-            --shadow-glow: 0 0 25px rgba(255, 192, 203, 0.4);
+            --red-cta: #e63946;
+            --dark-text: #1d3557;
+            --light-bg: #f1faee;
+            --white: #ffffff;
+            --bonus-bg: #a8dadc;
+            --price-color: #000000;
         }
 
-        /* --- GLOBAL RESET & STYLES --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: var(--font-main);
-            color: var(--color-text-dark);
-            background: linear-gradient(180deg, var(--color-bg-light) 0%, #eef2f9 100%);
-            overflow-x: hidden; /* Previne scroll horizontal das animações */
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
         }
-        .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 60px 0; position: relative; }
 
-        /* --- ANIMAÇÕES MÁGICAS --- */
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
-        }
-        .floating-element {
-            position: absolute;
-            opacity: 0.15;
-            animation: float 6s ease-in-out infinite;
-            pointer-events: none;
-        }
-        .star1 { top: 10%; left: 5%; font-size: 20px; color: var(--pastel-yellow); animation-duration: 5s; }
-        .star2 { top: 20%; right: 10%; font-size: 30px; color: var(--pastel-mint); animation-duration: 7s; }
-        .star3 { bottom: 15%; left: 15%; font-size: 25px; color: var(--pastel-lavender); animation-duration: 6s; }
-
-        /* --- DIVISORES DE SEÇÃO EM ONDA --- */
-        .wave-divider {
-            position: absolute;
-            bottom: -1px; /* Ajuste fino para cobrir a linha */
-            left: 0;
+        .container {
             width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
-            z-index: 1; /* Garante que a onda fique abaixo do conteúdo */
-        }
-        .wave-divider svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 100px;
+            max-width: 720px;
+            text-align: center;
         }
 
-        /* --- TIPOGRAFIA E AJUDANTES --- */
-        .section-title {
-            text-align: center;
+        /* --- Headline & Video --- */
+        .headline {
             font-size: 2.2rem;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 20px;
-        }
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: -10px auto 50px auto;
-        }
-        .highlight { color: var(--pastel-pink); }
-        .dark-section { background-color: var(--color-bg-dark); color: var(--color-text-light); }
-        .dark-section .section-title { color: white; }
-        .dark-section .section-subtitle { color: var(--color-text-subtle); }
-
-        /* ✅ ESTILO ADICIONADO PARA O PREÇO */
-        .price-highlight {
             font-weight: 900;
-            font-size: 1.8em;
-            color: var(--pastel-yellow);
-            vertical-align: middle;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+            line-height: 1.3;
+        }
+
+        /* --- ✅ [AJUSTADO] Retângulo de aviso do vídeo --- */
+        .video-prompt {
+            background: linear-gradient(90deg, #fef3c7, #fee2e2); /* Gradiente pastel (amarelo claro para rosa claro) */
+            color: var(--dark-text); /* Texto escuro para alto contraste */
+            border: 1px solid #fde68a; /* Borda sutil para destacar */
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra mais suave */
+        }
+
+        #ifr_68ad2003b52da05c0d97dbc9_wrapper { /* ID ATUALIZADO */
+             border-radius: 12px;
+             overflow: hidden;
+             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        /* --- BOTÕES --- */
-        .cta-button {
-            display: inline-block;
-            background: var(--pastel-pink);
-            color: var(--color-bg-dark);
+        /* --- Seção da Oferta (que aparece depois de 5 min) --- */
+        #offer-section {
+            margin-top: 30px;
+        }
+        
+        /* --- Texto de urgência --- */
+        .urgency-text {
             font-size: 1.2rem;
             font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            box-shadow: var(--shadow-glow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            border: none;
-            cursor: pointer;
+            padding: 15px;
+            background-color: #fffbe6;
+            border: 2px solid #facc15;
+            color: #713f12;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
-        .cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 0 40px rgba(255, 192, 203, 0.6); }
 
-        /* --- SEÇÃO 1: HERO --- */
-        .hero { text-align: center; padding: 40px 0; }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        .hero .headline { font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .hero .main-image { max-width: 100%; width: 500px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
-        .hero .subheadline { font-size: 1.2rem; margin-bottom: 30px; }
-        .hero-badge { display: inline-block; background-color: rgba(255,255,255,0.1); border-radius: 50px; padding: 10px 20px; font-weight: 600; margin-bottom: 30px; }
-        .hero-badge i { color: var(--pastel-yellow); margin-right: 8px; }
-
-        /* --- SEÇÃO 2: DOR + SOLUÇÃO --- */
-        .pain-list { list-style: none; max-width: 500px; margin: 0 auto 30px auto; }
-        .pain-list li { margin-bottom: 15px; font-size: 1.1rem; background: #fff; padding: 15px; border-radius: 12px; box-shadow: var(--shadow-soft); display: flex; align-items: center; gap: 15px; border-left: 4px solid var(--pastel-pink); }
-        .pain-list i { color: var(--pastel-pink); font-size: 1.5rem; }
-        .solution-text { text-align: center; font-size: 1.2rem; font-weight: 600; max-width: 600px; margin: 40px auto 0 auto; }
-        
-        .video-container {
-            position: relative;
-            max-width: 600px;
-            margin: 40px auto;
-            border-radius: 15px;
-            overflow: hidden; 
-            box-shadow: var(--shadow-soft);
-        }
-        .video-container video {
-            width: 100%;
-            display: block;
-        }
-        #unmute-button {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
+        /* --- Preço --- */
+        .price {
+            margin-top: 25px;
             font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10;
-            transition: background-color 0.3s ease;
-        }
-        #unmute-button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+            font-weight: 400;
+            color: var(--dark-text);
+            line-height: 1.4;
         }
 
-        /* --- SEÇÃO 3: PRODUTO --- */
-        .product-images { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
-        .product-images img { max-width: 100%; width: 350px; border-radius: 15px; box-shadow: var(--shadow-soft); transform: rotate(-3deg); transition: transform 0.4s ease, box-shadow 0.4s ease; }
-        .product-images img:last-child { transform: rotate(4deg); }
-        .product-images img:hover { transform: scale(1.05) rotate(0); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-
-        /* --- SEÇÃO 3.1: PROVA SOCIAL --- */
-        .social-proof .carousel { width: 100%; max-width: 1200px; margin: auto; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
-        .social-proof .carousel-track { display: flex; width: calc(250px * 8); animation: scroll 30s linear infinite; }
-        .social-proof .carousel-slide { width: 250px; flex-shrink: 0; padding: 0 15px; }
-        .social-proof .carousel-slide img { width: 100%; border-radius: 12px; border: 3px solid rgba(255,255,255,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .social-proof .carousel-slide:hover img { transform: scale(1.05); box-shadow: 0 0 15px rgba(253, 238, 148, 0.5); }
-        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(calc(-250px * 4)); } }
-        .social-proof .section-subtitle { color: var(--pastel-yellow); font-weight: 700; font-size: 1.5rem; }
-        .social-proof .section-subtitle i { margin: 0 2px; }
-
-        /* --- SEÇÃO 4: O QUE VOCÊ RECEBE --- */
-        .what-you-get-list { list-style: none; max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
-        .what-you-get-list li { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; font-weight: 600; }
-        .what-you-get-list i { font-size: 1.5rem; color: var(--pastel-mint); }
-        .value-proposition { text-align: center; background: linear-gradient(45deg, var(--pastel-mint), var(--pastel-lavender)); color: var(--color-bg-dark); padding: 20px; border-radius: 15px; font-weight: 700; max-width: 600px; margin: 40px auto 0 auto; }
-        
-        /* ESTILO PARA A IMAGEM DA COMUNIDADE */
-        .community-image {
+        /* --- Botão CTA --- */
+        .cta-button {
             display: block;
-            max-width: 100%;
-            width: 800px; 
-            margin: 20px auto 0 auto;
-            border-radius: 15px;
-            box-shadow: var(--shadow-soft);
+            width: 100%;
+            padding: 20px;
+            margin-top: 15px;
+            background-color: var(--red-cta);
+            color: var(--white);
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
-        /* --- SEÇÃO 5: BÔNUS --- */
-        .bonuses-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
-        @media (min-width: 768px) { .bonuses-grid { grid-template-columns: repeat(3, 1fr); } }
-        .bonus-card { background-color: rgba(255,255,255,0.05); border: 2px dashed var(--pastel-yellow); padding: 30px 25px; border-radius: 15px; text-align: center; transition: transform 0.3s ease, border-color 0.3s ease; }
-        .bonus-card:hover { transform: translateY(-8px); border-color: white; }
-        .bonus-card i { font-size: 3rem; color: var(--pastel-yellow); margin-bottom: 15px; }
-        .bonus-card h3 { font-size: 1.3rem; color: white; }
-        
-        /* --- SEÇÃO 7: ESCASSEZ --- */
-        .fomo { background-color: var(--pastel-lavender); padding: 20px; border-radius: 20px;}
-        .fomo-box { background: rgba(255,255,255,0.3); border-radius: 15px; padding: 30px; text-align: center; max-width: 600px; margin: 0 auto; }
-        .fomo-box p { font-size: 1.2rem; font-weight: 600; color: var(--color-bg-dark); }
-        
-        /* --- SEÇÃO 8: GARANTIA --- */
-        .guarantee-box { max-width: 700px; margin: 0 auto; text-align: center; border: 3px solid var(--pastel-mint); padding: 40px; border-radius: 20px; background: #fff; box-shadow: var(--shadow-soft); }
-        .guarantee-box .icon { font-size: 4rem; color: var(--pastel-mint); animation: pulse 2s infinite ease-in-out; }
+        .cta-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.5);
+        }
 
-        /* --- SEÇÃO 9: OFERTA FINAL --- */
-        .offer-card { background-color: rgba(255,255,255,0.1); border: 2px solid var(--pastel-pink); box-shadow: var(--shadow-glow); border-radius: 20px; max-width: 700px; margin: 0 auto; padding: 30px; text-align: center; }
-        .offer-card .price { margin: 20px 0; }
-        .offer-card .old-price { font-size: 1.5rem; text-decoration: line-through; color: var(--color-text-subtle); }
-        .offer-card .new-price { font-size: 3.5rem; font-weight: 900; color: white; }
-        .offer-list { list-style: none; text-align: left; margin: 30px auto; max-width: 350px; }
-        .offer-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .offer-list i { color: var(--pastel-mint); }
-        .licenses-left { display: inline-block; background: rgba(255,192,203,0.2); color: var(--pastel-pink); padding: 8px 15px; border-radius: 50px; font-weight: 700; margin-bottom: 30px; }
+        /* --- Mockup do Produto --- */
+        .product-mockup {
+            max-width: 450px;
+            width: 100%;
+            margin: 30px auto 0 auto;
+        }
+
+        /* --- Lista de Benefícios --- */
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 40px auto 0 auto;
+            text-align: left;
+            max-width: 500px;
+        }
+        .benefits-list li {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .benefits-list i {
+            color: #2a9d8f;
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
         
-        /* --- SEÇÃO 11: FAQ --- */
-        .faq-item { background: var(--color-white); padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: var(--shadow-soft); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .faq-item:hover { transform: scale(1.03); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
-        .faq-item h3 { font-weight: 700; margin-bottom: 10px; color: var(--color-bg-dark); }
-        .faq-item h3 i { color: var(--pastel-lavender); margin-right: 10px; }
+        /* --- Seção de Bônus --- */
+        .bonus-banner {
+            background-color: var(--bonus-bg);
+            color: var(--dark-text);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .bonus-banner h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+        .bonus-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .bonus-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--light-bg);
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-align: left;
+            flex-basis: calc(50% - 10px);
+        }
+        .bonus-item i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: var(--red-cta);
+        }
+        
+        /* --- Seção de Garantia --- */
+        .guarantee-section {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: var(--white);
+            border: 2px solid var(--bonus-bg);
+            border-radius: 12px;
+        }
+        .guarantee-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .guarantee-section p {
+            max-width: 550px;
+            margin: 0 auto 20px auto;
+        }
+        .guarantee-section img {
+            max-width: 120px;
+        }
 
-        /* --- RODAPÉ --- */
-        .footer { padding-bottom: 20px; text-align: center; color: var(--color-text-subtle); }
-        .footer .logo { max-height: 50px; opacity: 0.8; margin-bottom: 15px; transition: opacity 0.3s ease; }
-        .footer .logo:hover { opacity: 1; }
-        .footer p { font-size: 0.9rem; margin-top: 20px; }
+        /* --- Seção FAQ --- */
+        .faq-section {
+            margin-top: 40px;
+            text-align: left;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+        }
+        .faq-item {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .faq-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--dark-text);
+        }
 
-        /* --- AJUSTES RESPONSIVOS --- */
-        @media (max-width: 768px) {
-            .hero .headline { font-size: 2rem; }
-            .section-title { font-size: 1.8rem; }
-            .product-images { flex-direction: column; align-items: center; }
-            .product-images img { transform: rotate(0); margin-bottom: 20px; }
-            .product-images img:last-child { transform: rotate(0); }
-            .fomo { padding: 10px; }
-            .fomo-box { padding: 20px; }
-            .offer-card .new-price { font-size: 3rem; }
-            #unmute-button { width: 40px; height: 40px; font-size: 1.2rem; bottom: 10px; right: 10px;}
+        /* --- Ajustes Responsivos --- */
+        @media (max-width: 600px) {
+            .headline {
+                font-size: 1.8rem;
+            }
+            .cta-button {
+                font-size: 1.2rem;
+            }
+            .price {
+                font-size: 1.5rem;
+            }
+            .bonus-item {
+                flex-basis: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- SECTION 1 – HERO -->
-    <section class="hero dark-section">
-        <div class="hero-content">
-            <div class="container">
-                <!-- ✅ TÍTULO ALTERADO AQUI -->
-                <h1 class="headline">American moms are in shock:<br>This <span class="highlight">“magic book”</span> is getting kids off screens in just 24 hours.</h1>
-                <img src="https://i.imgur.com/7AyRU6B.png" alt="Happy child playing with educational toys" class="main-image">
-                <!-- ✅ TEXTO COM DESTAQUE NO PREÇO ALTERADO AQUI -->
-                <p class="subheadline">No yelling, no punishment, no therapy.<br>And you can get instant access right now, for just <span class="price-highlight">$10</span>.</p>
-                <div class="hero-badge">
-                    <i class="fas fa-bolt"></i> Instant delivery + lifetime access
-                </div>
-                <br>
-                <a href="#final-offer-cta" class="cta-button">I WANT ACCESS NOW</a>
-            </div>
-        </div>
-        <i class="fas fa-star floating-element star1"></i>
-        <i class="fas fa-plus floating-element star2"></i>
-        <i class="far fa-circle floating-element star3"></i>
-        <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--color-bg-light);">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,23.5V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-            </svg>
-        </div>
-    </section>
+    <div class="container">
 
-    <!-- SECTION 2 – PAIN + SOLUTION -->
-    <section class="pain-solution">
-        <div class="container">
-            <h2 class="section-title">Is your child glued to a screen?</h2>
-            <ul class="pain-list">
-                <li><i class="fas fa-heart-broken"></i> Gets upset when you take the phone away?</li>
-                <li><i class="fas fa-heart-broken"></i> Doesn’t know how to play alone anymore?</li>
-                <li><i class="fas fa-heart-broken"></i> Feels like the tablet became the official babysitter?</li>
-            </ul>
-            <p class="solution-text">You’re not alone.<br>Over <span style="color:var(--pastel-mint); font-weight:700;">43,000 moms</span> have been through this — and they all found the same solution.</p>
-            
-            <div class="video-container">
-                <video id="vsl-video" src="https://video.wixstatic.com/video/512b9f_ac37a61a1aed45748dfa627bc6c2c070/1080p/mp4/file.mp4" autoplay muted loop playsinline></video>
-                <button id="unmute-button">
-                    <i class="fas fa-volume-mute"></i>
-                </button>
-            </div>
+        <!-- 1. Headline -->
+        <h1 class="headline">
+            Descubra o doce viral que quase ninguém no Brasil vende e pode te dar até 3 mil reais em um único final de semana.
+        </h1>
+        
+        <!-- ✅ [AJUSTADO] Retângulo de aviso com novo texto e cores -->
+        <div class="video-prompt">
+            Assista o vídeo e entenda, antes que saia do ar!
         </div>
-    </section>
 
-    <!-- SECTION 3 – PRODUCT INTRO -->
-    <section class="product-intro">
-        <div class="container">
-            <h2 class="section-title">Meet the digital book that changed the routine of thousands of families</h2>
-            <p class="section-subtitle">“365+ Educational Activities” – created by specialists to capture your child’s attention without using screens.</p>
-            <div class="product-images">
-                <img src="https://i.imgur.com/7dGudBS.png" alt="Cover of the 365+ Educational Activities book">
-                <img src="https://i.imgur.com/rHXeAkr.png" alt="Inside pages of the educational activities book">
-            </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="#final-offer-cta" class="cta-button">YES, I WANT THIS BOOK!</a>
-            </div>
-        </div>
-    </section>
+        <!-- 2. VSL Video Embed -->
+        <!-- ==================== CÓDIGO ATUALIZADO ==================== -->
+        <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_68ad2003b52da05c0d97dbc9_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_68ad2003b52da05c0d97dbc9_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68ad2003b52da05c0d97dbc9" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/68ad2003b52da05c0d97dbc9/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
+        <!-- ========================================================== -->
 
-    <!-- SECTION 3.1 – SOCIAL PROOF CAROUSEL -->
-    <section class="social-proof dark-section">
-        <p class="section-subtitle"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><br>Over 43,000 American moms have already tried it and approved!</p>
-        <div class="carousel">
-            <div class="carousel-track">
-                <div class="carousel-slide"><img src="https://i.imgur.com/IOcsZ8u.png" alt="Testimonial photo 1"></div>
-                <div class="carousel-slide"><img src="https://i.imgur.com/koFYbkM.png" alt="Testimonial photo 2"></div>
-                <div class="carousel-slide"><img src="https://i.imgur.com/Arez2gm.png" alt="Testimonial photo 3"></div>
-                <div class="carousel-slide"><img src="https://i.imgur.com/poXtryi.jpeg" alt="Testimonial photo 4"></div>
-                <div class="carousel-slide"><img src="https://i.imgur.com/IOcsZ8u.png" alt="Testimonial photo 1"></div>
-                <div class="carousel-slide"><img src="https://i.imgur.com/koFYbkM.png" alt="Testimonial photo 2"></div>
-                <div class="carousel-slide"><img src="https://i.imgur.com/Arez2gm.png" alt="Testimonial photo 3"></div>
-                <div class="carousel-slide"><img src="https://i.imgur.com/poXtryi.jpeg" alt="Testimonial photo 4"></div>
-            </div>
-        </div>
-        <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--color-bg-light);">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,23.5V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-            </svg>
-        </div>
-    </section>
+        <!-- ======================================================= -->
+        <!-- INÍCIO DA SEÇÃO DE OFERTA (aparece após 5 minutos) -->
+        <!-- ======================================================= -->
+        <div id="offer-section" style="display: none;">
 
-    <!-- SECTION 4 – WHAT YOU’LL GET -->
-    <section class="what-you-get">
-        <div class="container">
-            <h2 class="section-title">📦 Get all of this, instantly:</h2>
-            <ul class="what-you-get-list">
-                <li><i class="fas fa-check-circle"></i> 365 educational activities created by educators</li>
-                <li><i class="fas fa-brain"></i> Boosts focus, creativity, and discipline</li>
-                <li><i class="fas fa-palette"></i> Colorful illustrations + step-by-step instructions</li>
-                <li><i class="fas fa-bolt"></i> Instant access via link</li>
-                <li><i class="fas fa-child"></i> Ideal for children ages 3 to 10</li>
-            </ul>
-            <div class="value-proposition">
-                💥 You’re getting more value than most $500 courses out there.
-            </div>
-        </div>
-    </section>
-    
-    <!-- SEÇÃO COMUNIDADE -->
-    <section class="community-section">
-        <div class="container">
-            <h2 class="section-title">Join Our Magical Community</h2>
-            <img src="https://i.imgur.com/7rtYqOn.jpeg" alt="Mothers and children sharing activities on Instagram" class="community-image">
-            <p class="section-subtitle" style="margin-top: 30px; font-weight: 600; max-width: 600px;">
-                Become part of our community of moms! Share your creations on Instagram and tag us.
+            <!-- 1. Título de urgência -->
+            <p class="urgency-text">🚨 Pra você que viu até aqui: liberei apenas 10 acessos por esse valor promocional.</p>
+
+            <!-- 2. Preço -->
+            <p id="price-display" class="price">
+                <span style="text-decoration: line-through; color: #999;">De R$197,00</span><br>
+                <strong style="font-size: 1.6rem; color: #e63946;">Por apenas R$19,90 hoje</strong>
             </p>
-        </div>
-    </section>
 
-    <!-- SECTION 5 – EXCLUSIVE BONUSES -->
-    <section class="bonuses dark-section">
-        <div class="container">
-            <h2 class="section-title">🎁 And today you get 3 special bonuses, completely <span style="color:var(--pastel-yellow);">free</span>:</h2>
-            <div class="bonuses-grid">
-                <div class="bonus-card">
-                    <i class="fas fa-clipboard-check"></i>
-                    <h3>Bonus 1: Behavior chart</h3>
-                    <p>A simple and effective chart to print and use, encouraging positive behavior.</p>
-                </div>
-                <div class="bonus-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Bonus 2: “7 Days Without Screens” calendar</h3>
-                    <p>A child-friendly challenge approved by psychoeducators to kickstart the new routine.</p>
-                </div>
-                <div class="bonus-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Bonus 3: Printable "Bobbie Gods"</h3>
-                    <p>Fun and creative characters to print, color, and play with.</p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 60px;">
-                <a href="#final-offer-cta" class="cta-button">Claim My Book + 3 Free Bonuses</a>
-            </div>
-        </div>
-        <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--color-bg-light);">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,23.5V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-            </svg>
-        </div>
-    </section>
+            <!-- Novos bullets adicionados aqui -->
+            <ul id="benefits" class="benefits-list" style="margin-top: 20px; margin-bottom: 20px;">
+                <li><i class="fa-solid fa-infinity"></i>Acesso vitalício</li>
+                <li><i class="fa-solid fa-hand-holding-dollar"></i>Pagamento único</li>
+            </ul>
 
-    <!-- SECTION 6, 7 & 8 -->
-    <section class="more-info">
-        <div class="container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto 80px auto;">
-                <h2 class="section-title">Why this method works<br>(even when nothing else does)</h2>
-                <p style="font-size: 1.1rem;">This material activates areas of the brain linked to <span style="color:var(--pastel-mint); font-weight:700;">focus and independence</span>. It’s like your child’s brain gets “reset” and learns how to entertain themselves without a phone, YouTube, or tablet.</p>
-            </div>
-            <div class="fomo">
-                <div class="fomo-box">
-                    <h2 class="section-title" style="color: var(--color-bg-dark); font-size: 1.8rem; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> This is the last time you’ll see this offer.</h2>
-                    <p>Only <span style="font-size: 1.5em; font-weight: 900;">47</span> digital licenses left today. Once you leave this page, the offer disappears.</p>
+            <!-- 3. Botão CTA -->
+            <a href="https://bellavitaexpress.mycartpanda.com/checkout/194211870:1" id="cta-button" class="cta-button">
+                Comprar agora o Método Mochi Lucrativo
+            </a>
+
+            <!-- 4. Mockup do curso -->
+            <img src="https://i.imgur.com/Zi55bLN.png" alt="Mockup do Método Mochi Lucrativo" class="product-mockup">
+
+            <!-- 5. Lista de benefícios -->
+            <ul id="benefits" class="benefits-list">
+                <li><i class="fa-solid fa-circle-play"></i>Aulas passo a passo em vídeo mostrando como fazer o Mochi</li>
+                <li><i class="fa-solid fa-seedling"></i>Receita adaptada para o Brasil com ingredientes acessíveis</li>
+                <li><i class="fa-solid fa-kitchen-set"></i>Produção simples sem fogão, direto na sua cozinha</li>
+                <li><i class="fa-solid fa-bullseye"></i>Estratégia de vendas para fechar encomendas já no primeiro final de semana</li>
+            </ul>
+            
+            <!-- 6. Seção de bônus -->
+            <div id="bonus-section" class="bonus-banner">
+                <h2>🎁 Além disso, você recebe 4 bônus gratuitos (só hoje!)</h2>
+                <div class="bonus-items">
+                    <div class="bonus-item">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>Guia de precificação inteligente para lucrar mais</span>
+                    </div>
+                    <div class="bonus-item">
+                        <i class="fa-solid fa-box-archive"></i>
+                        <span>Ideias de embalagens criativas que encantam clientes</span>
+                    </div>
+                    <div class="bonus-item">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span>Checklist de primeiros passos para começar a vender rápido</span>
+                    </div>
+                    <div class="bonus-item">
+                        <i class="fa-solid fa-comments-dollar"></i>
+                        <span>Mini treinamento: como vender Mochi pelo WhatsApp e redes sociais</span>
+                    </div>
                 </div>
             </div>
-            <div class="guarantee-box" style="margin-top: 80px;">
-                <i class="fas fa-shield-alt icon"></i>
-                <h2 class="section-title">30-day full guarantee</h2>
-                <p>Try it for 30 days. If you don’t see your child playing alone, less agitated, and more creative, we’ll refund 100% of your money. No questions. No excuses.</p>
+            
+            <!-- 7. Garantia de 30 dias -->
+            <div class="guarantee-section">
+                <h2>✅ Garantia incondicional de 30 dias</h2>
+                <p>Você pode acessar todo o conteúdo, aplicar as aulas e ver os resultados. Se dentro de 30 dias sentir que não valeu a pena, basta enviar um e-mail e devolvemos 100% do seu investimento.</p>
+                
             </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="#final-offer-cta" class="cta-button">Start My Risk-Free Access</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- SECTION 9 – FINAL OFFER -->
-    <section id="final-offer-cta" class="dark-section">
-        <div class="container">
-            <div class="offer-card">
-                <h2 class="section-title">FULL OFFER – TODAY ONLY</h2>
-                <div class="price">
-                    <span class="old-price">$60</span>
-                    <span class="new-price">$10</span>
+            <!-- 8. FAQ – perguntas e respostas -->
+            <div class="faq-section">
+                <h2>❓ Perguntas frequentes</h2>
+                <div class="faq-item">
+                    <h3>Preciso ter experiência na cozinha?</h3>
+                    <p>Não! O método foi feito para iniciantes. Basta seguir o passo a passo em vídeo.</p>
                 </div>
-                <ul class="offer-list">
-                    <li><i class="fas fa-check-circle"></i> Complete digital book</li>
-                    <li><i class="fas fa-check-circle"></i> 3 exclusive bonuses (worth $40+ alone)</li>
-                    <li><i class="fas fa-check-circle"></i> Instant delivery</li>
-                    <li><i class="fas fa-check-circle"></i> Lifetime access</li>
-                    <li><i class="fas fa-check-circle"></i> One-time payment, no subscription</li>
-                </ul>
-                <div class="licenses-left">⚠️ Only 47 licenses left</div>
-                <!-- ✅ EVENTO InitiateCheckout ADICIONADO AQUI -->
-                <a href="https://expressbellavita.systeme.io/paystripe1" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">I WANT TO BUY NOW</a>
+                <div class="faq-item">
+                    <h3>É caro produzir o Mochi?</h3>
+                    <p>De jeito nenhum! Cada unidade custa centavos para produzir e você pode vender por um valor alto, com muita margem de lucro.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Em quanto tempo vou começar a vender?</h3>
+                    <p>Se aplicar as estratégias, é possível fechar suas primeiras encomendas já no primeiro final de semana.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Funciona mesmo sem cozinha profissional?</h3>
+                    <p>Sim. Você só precisa da sua cozinha comum. Não exige fogão nem forno.</p>
+                </div>
             </div>
-        </div>
-        <div class="wave-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: var(--color-bg-light);">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,23.5V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-            </svg>
-        </div>
-    </section>
 
-    <!-- SECTION 11 – FAQ -->
-    <section class="faq">
-        <div class="container" style="max-width: 800px;">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3><i class="fas fa-question-circle"></i>Is it physical or digital?</h3>
-                <p>It’s 100% digital. You get an instant access link right after your purchase. You can read it on any device or print the activities you like most.</p>
-            </div>
-            <div class="faq-item">
-                <h3><i class="fas fa-question-circle"></i>Is it for any age?</h3>
-                <p>The activities are ideal for children aged 3 to 10. The instructions are simple for older kids to follow alone and perfect for younger ones to do with a little help.</p>
-            </div>
-            <div class="faq-item">
-                <h3><i class="fas fa-question-circle"></i>Do I need extra materials?</h3>
-                <p>No. We specifically designed all activities to use simple things you probably already have at home: paper, pencils, cardboard boxes, household items, etc.</p>
-            </div>
-            <div class="faq-item">
-                <h3><i class="fas fa-question-circle"></i>Does it really work?</h3>
-                <p>Most moms see a noticeable difference in 2 to 3 days. But we want you to be 100% confident, which is why you have 30 days to try it with our full money-back guarantee.</p>
-            </div>
         </div>
-    </section>
-    
-    <!-- FOOTER -->
-    <footer class="footer dark-section" style="padding-top: 120px;">
-        <div class="container">
-            <p>© 2024 The Magic Book. All rights reserved.<br>A magical way to play and learn.</p>
-        </div>
-    </footer>
+        <!-- ======================================================= -->
+        <!-- FIM DA SEÇÃO DE OFERTA -->
+        <!-- ======================================================= -->
+
+    </div>
 
     <script>
-        const video = document.getElementById('vsl-video');
-        const unmuteButton = document.getElementById('unmute-button');
-        const icon = unmuteButton.querySelector('i');
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- Configuração ---
+            const buttonDelayInMinutes = 5; // A oferta aparece após 5 minutos
+            const buttonDelayInMilliseconds = buttonDelayInMinutes * 60 * 1000;
 
-        unmuteButton.addEventListener('click', () => {
-            if (video.muted) {
-                video.muted = false;
-                icon.classList.remove('fa-volume-mute');
-                icon.classList.add('fa-volume-up');
-            } else {
-                video.muted = true;
-                icon.classList.remove('fa-volume-up');
-                icon.classList.add('fa-volume-mute');
+            // --- Elementos ---
+            const offerSection = document.getElementById('offer-section');
+
+            // Função para mostrar a seção da oferta
+            function showOfferElements() {
+                offerSection.style.display = 'block';
             }
+
+            // Define o tempo para mostrar os elementos
+            setTimeout(showOfferElements, buttonDelayInMilliseconds);
         });
     </script>
 
