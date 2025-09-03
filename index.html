@@ -1,418 +1,200 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método Mochi Lucrativo</title>
-
-    <!-- Google Fonts -->
+    <title>Atividades Cristãs Infantis - O material mais fofo que você já viu!</title>
+    
+    <!-- Importando as fontes mágicas: Fredoka One, Baloo 2 e Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Fredoka+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- SCRIPT CLARITY -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "r6sxt9hlrm");
-    </script>
-
-    <!-- SCRIPT UTMIFY -->
-<script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  data-utmify-ignore-iframe
-  data-utmify-is-cartpanda
-  async
-  defer
-></script>
-
-    <!-- SCRIPT PIXEL FACEBOOK -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1451346126115884');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1451346126115884&ev=PageView&noscript=1"
-    /></noscript>
-
+    <!-- Pequeno CSS para animações -->
     <style>
-        /* --- Reset and Base Styles --- */
-        :root {
-            --red-cta: #e63946;
-            --dark-text: #1d3557;
-            --light-bg: #f1faee;
-            --white: #ffffff;
-            --bonus-bg: #a8dadc;
-            --price-color: #000000;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--dark-text);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 720px;
-            text-align: center;
-        }
-
-        /* --- Headline & Video --- */
-        .headline {
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin-bottom: 15px;
-            color: var(--dark-text);
-            line-height: 1.3;
-        }
-
-        /* --- ✅ [AJUSTADO] Retângulo de aviso do vídeo --- */
-        .video-prompt {
-            background: linear-gradient(90deg, #fef3c7, #fee2e2); /* Gradiente pastel (amarelo claro para rosa claro) */
-            color: var(--dark-text); /* Texto escuro para alto contraste */
-            border: 1px solid #fde68a; /* Borda sutil para destacar */
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra mais suave */
-        }
-
-        #ifr_68ad2003b52da05c0d97dbc9_wrapper { /* ID ATUALIZADO */
-             border-radius: 12px;
-             overflow: hidden;
-             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        /* --- Seção da Oferta (que aparece depois de 5 min) --- */
-        #offer-section {
-            margin-top: 30px;
-        }
-        
-        /* --- Texto de urgência --- */
-        .urgency-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            padding: 15px;
-            background-color: #fffbe6;
-            border: 2px solid #facc15;
-            color: #713f12;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        /* --- Preço --- */
-        .price {
-            margin-top: 25px;
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--dark-text);
-            line-height: 1.4;
-        }
-
-        /* --- Botão CTA --- */
-        .cta-button {
-            display: block;
-            width: 100%;
-            padding: 20px;
-            margin-top: 15px;
-            background-color: var(--red-cta);
-            color: var(--white);
-            font-size: 1.4rem;
-            font-weight: 700;
-            text-decoration: none;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.5);
-        }
-
-        /* --- Mockup do Produto --- */
-        .product-mockup {
-            max-width: 450px;
-            width: 100%;
-            margin: 30px auto 0 auto;
-        }
-
-        /* --- Lista de Benefícios --- */
-        .benefits-list {
-            list-style: none;
-            padding: 0;
-            margin: 40px auto 0 auto;
-            text-align: left;
-            max-width: 500px;
-        }
-        .benefits-list li {
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-        .benefits-list i {
-            color: #2a9d8f;
-            margin-right: 12px;
-            font-size: 1.2rem;
-        }
-        
-        /* --- Seção de Bônus --- */
-        .bonus-banner {
-            background-color: var(--bonus-bg);
-            color: var(--dark-text);
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 40px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-        .bonus-banner h2 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-        }
-        .bonus-items {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        .bonus-item {
-            display: flex;
-            align-items: center;
-            background-color: var(--light-bg);
-            padding: 10px 15px;
-            border-radius: 8px;
-            text-align: left;
-            flex-basis: calc(50% - 10px);
-        }
-        .bonus-item i {
-            font-size: 1.5rem;
-            margin-right: 10px;
-            color: var(--red-cta);
-        }
-        
-        /* --- Seção de Garantia --- */
-        .guarantee-section {
-            margin-top: 40px;
-            padding: 25px;
-            background-color: var(--white);
-            border: 2px solid var(--bonus-bg);
-            border-radius: 12px;
-        }
-        .guarantee-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        .guarantee-section p {
-            max-width: 550px;
-            margin: 0 auto 20px auto;
-        }
-        .guarantee-section img {
-            max-width: 120px;
-        }
-
-        /* --- Seção FAQ --- */
-        .faq-section {
-            margin-top: 40px;
-            text-align: left;
-        }
-        .faq-section h2 {
-            text-align: center;
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-        }
-        .faq-item {
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .faq-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            color: var(--dark-text);
-        }
-
-        /* --- Ajustes Responsivos --- */
-        @media (max-width: 600px) {
-            .headline {
-                font-size: 1.8rem;
-            }
-            .cta-button {
-                font-size: 1.2rem;
-            }
-            .price {
-                font-size: 1.5rem;
-            }
-            .bonus-item {
-                flex-basis: 100%;
-            }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(180deg, #FFF9F5 0%, #F8F0FF 100%); color: #5C5470;">
 
-    <div class="container">
+    <!-- Container Principal -->
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px; text-align: center;">
 
-        <!-- 1. Headline -->
-        <h1 class="headline">
-            Descubra o doce viral que quase ninguém no Brasil vende e pode te dar até 3 mil reais em um único final de semana.
-        </h1>
-        
-        <!-- ✅ [AJUSTADO] Retângulo de aviso com novo texto e cores -->
-        <div class="video-prompt">
-            Assista o vídeo e entenda, antes que saia do ar!
-        </div>
+        <!-- ============================ -->
+        <!-- Seção 1 – Hero Mágico        -->
+        <!-- ============================ -->
+        <section id="hero" style="padding: 20px 10px;">
+            <!-- LOGO AJUSTADA E MAIS PRÓXIMA DO TÍTULO -->
+            <img src="https://i.imgur.com/2AJJ7RP.png" alt="Logo Atividades Cristãs" style="width: 140px; height: auto; margin-bottom: 10px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">
 
-        <!-- 2. VSL Video Embed -->
-        <!-- ==================== CÓDIGO ATUALIZADO ==================== -->
-        <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_68ad2003b52da05c0d97dbc9_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;"> <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_68ad2003b52da05c0d97dbc9_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68ad2003b52da05c0d97dbc9" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/751abf94-7b61-4139-9bd2-92a8e5c430a1/players/68ad2003b52da05c0d97dbc9/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
-        <!-- ========================================================== -->
+            <h1 style="font-family: 'Fredoka One', cursive; font-size: 44px; line-height: 1.2; color: #6A5ACD; font-weight: 400; margin-bottom: 20px; text-shadow: 2px 2px 0px #E6E6FA;">
+                Ensine valores cristãos ao seu filho brincando
+            </h1>
 
-        <!-- ======================================================= -->
-        <!-- INÍCIO DA SEÇÃO DE OFERTA (aparece após 5 minutos) -->
-        <!-- ======================================================= -->
-        <div id="offer-section" style="display: none;">
-
-            <!-- 1. Título de urgência -->
-            <p class="urgency-text">🚨 Pra você que viu até aqui: liberei apenas 10 acessos por esse valor promocional.</p>
-
-            <!-- 2. Preço -->
-            <p id="price-display" class="price">
-                <span style="text-decoration: line-through; color: #999;">De R$197,00</span><br>
-                <strong style="font-size: 1.6rem; color: #e63946;">Por apenas R$19,90 hoje</strong>
+            <!-- TEXTO PERSUASIVO AJUSTADO -->
+            <p style="font-size: 17px; line-height: 1.7; max-width: 600px; margin: 0 auto 30px;">
+                Com esse material exclusivo, você vai ocupar o tempo dele com brincadeiras educativas cristãs, que ensinam fé, amor e valores — tudo de forma leve e divertida!
             </p>
 
-            <!-- Novos bullets adicionados aqui -->
-            <ul id="benefits" class="benefits-list" style="margin-top: 20px; margin-bottom: 20px;">
-                <li><i class="fa-solid fa-infinity"></i>Acesso vitalício</li>
-                <li><i class="fa-solid fa-hand-holding-dollar"></i>Pagamento único</li>
-            </ul>
+            <!-- NOVO TEXTO DE DESTAQUE -->
+            <p style="display: inline-block; background-color: #FFDFE6; color: #352F44; padding: 12px 25px; border-radius: 50px; font-family: 'Baloo 2', cursive; font-size: 18px; margin: 10px auto 20px auto; box-shadow: 0 4px 10px rgba(219, 112, 147, 0.2);">
+                <i class="fa-solid fa-cross" style="color: #DB7093; margin-right: 8px;"></i>Seus filhos no caminho de cristo!
+            </p>
+            
+            <!-- NOVA IMAGEM ADICIONADA -->
+            <img src="https://i.imgur.com/Iqd9mDE.png" alt="Crianças estudando a bíblia" style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-top: 15px; margin-bottom: 30px;">
 
-            <!-- 3. Botão CTA -->
-            <a href="https://bellavitaexpress.mycartpanda.com/checkout/194211870:1" id="cta-button" class="cta-button">
-                Comprar agora o Método Mochi Lucrativo
+            <a href="#oferta" style="display: inline-block; background: linear-gradient(45deg, #87CEEB, #97E7E1); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-family: 'Baloo 2', cursive; font-size: 20px; box-shadow: 0 6px 15px rgba(135, 206, 235, 0.4); transition: all 0.3s ease; border-bottom: 4px solid #4682B4;">
+                <i class="fa-solid fa-lock"></i> Quero o acesso por R$1,99
             </a>
+        </section>
 
-            <!-- 4. Mockup do curso -->
-            <img src="https://i.imgur.com/Zi55bLN.png" alt="Mockup do Método Mochi Lucrativo" class="product-mockup">
+        <!-- Divisor de Nuvem CORRIGIDO -->
+        <div style="width: 100%; height: 80px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1440 320\"><path fill=\"%23E6E6FA\" fill-opacity=\"0.5\" d=\"M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,149.3C672,149,768,203,864,218.7C960,235,1056,213,1152,186.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z\"></path></svg>'); background-size: cover; background-repeat: no-repeat; margin-top: 40px;"></div>
 
-            <!-- 5. Lista de benefícios -->
-            <ul id="benefits" class="benefits-list">
-                <li><i class="fa-solid fa-circle-play"></i>Aulas passo a passo em vídeo mostrando como fazer o Mochi</li>
-                <li><i class="fa-solid fa-seedling"></i>Receita adaptada para o Brasil com ingredientes acessíveis</li>
-                <li><i class="fa-solid fa-kitchen-set"></i>Produção simples sem fogão, direto na sua cozinha</li>
-                <li><i class="fa-solid fa-bullseye"></i>Estratégia de vendas para fechar encomendas já no primeiro final de semana</li>
-            </ul>
-            
-            <!-- 6. Seção de bônus -->
-            <div id="bonus-section" class="bonus-banner">
-                <h2>🎁 Além disso, você recebe 4 bônus gratuitos (só hoje!)</h2>
-                <div class="bonus-items">
-                    <div class="bonus-item">
-                        <i class="fa-solid fa-calculator"></i>
-                        <span>Guia de precificação inteligente para lucrar mais</span>
-                    </div>
-                    <div class="bonus-item">
-                        <i class="fa-solid fa-box-archive"></i>
-                        <span>Ideias de embalagens criativas que encantam clientes</span>
-                    </div>
-                    <div class="bonus-item">
-                        <i class="fa-solid fa-list-check"></i>
-                        <span>Checklist de primeiros passos para começar a vender rápido</span>
-                    </div>
-                    <div class="bonus-item">
-                        <i class="fa-solid fa-comments-dollar"></i>
-                        <span>Mini treinamento: como vender Mochi pelo WhatsApp e redes sociais</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 7. Garantia de 30 dias -->
-            <div class="guarantee-section">
-                <h2>✅ Garantia incondicional de 30 dias</h2>
-                <p>Você pode acessar todo o conteúdo, aplicar as aulas e ver os resultados. Se dentro de 30 dias sentir que não valeu a pena, basta enviar um e-mail e devolvemos 100% do seu investimento.</p>
+        <!-- ============================ -->
+        <!-- Seção 2 – Encantos Incluídos -->
+        <!-- ============================ -->
+        <section id="o-que-recebe" style="background-color: rgba(230, 230, 250, 0.5); padding: 40px 20px; margin-top: -80px;">
+             <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44; margin-top: 0; margin-bottom: 40px;">O que tem no nosso baú mágico?</h2>
+             <div style="max-width: 500px; margin: 0 auto; font-size: 17px; line-height: 1.8;">
                 
+                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
+                    <i class="fa-solid fa-circle-check" style="font-size: 30px; color: #fff; background-color: #6A5ACD; padding: 10px; border-radius: 50%; margin-right: 15px;"></i>
+                    <p style="margin: 0;"><strong>30 atividades cristãs</strong> educativas para crianças de 3 a 9 anos</p>
+                </div>
+                <!-- NOVO BULLET POINT ADICIONADO -->
+                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
+                    <i class="fa-solid fa-book-open-reader" style="font-size: 30px; color: #fff; background-color: #87CEEB; padding: 10px; border-radius: 50%; margin-right: 15px;"></i>
+                    <p style="margin: 0;"><strong>Livrinho em PDF para impressão</strong> e acesso online direto no WhatsApp</p>
+                </div>
+                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
+                    <i class="fa-solid fa-bolt" style="font-size: 30px; color: #fff; background-color: #FFD700; padding: 10px; border-radius: 50%; margin-right: 15px;"></i>
+                    <p style="margin: 0;"><strong>Acesso imediato e vitalício</strong> – nada de esperar dias!</p>
+                </div>
+                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 30px; color: #fff; background-color: #25D366; padding: 10px; border-radius: 50%; margin-right: 15px;"></i>
+                    <p style="margin: 0;">Entrega direto no seu <strong>WhatsApp</strong></p>
+                </div>
+                 <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
+                    <i class="fa-solid fa-shield-heart" style="font-size: 30px; color: #fff; background-color: #FF69B4; padding: 10px; border-radius: 50%; margin-right: 15px;"></i>
+                    <p style="margin: 0;"><strong>Garantia de 30 dias</strong> – se não amar, devolvemos seu dinheiro</p>
+                </div>
+
+             </div>
+        </section>
+
+        <!-- ============================ -->
+        <!-- Seção 3 – Espiadinha Mágica  -->
+        <!-- ============================ -->
+        <section id="previa" style="margin-bottom: 50px; padding: 40px 10px;">
+            <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44;">
+                <i class="fa-solid fa-hand-sparkles" style="color: #FFB6C1;"></i> Uma espiadinha no nosso material...
+            </h2>
+            <div style="border: 8px solid white; border-radius: 25px; padding: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background-color: #F0F8FF;">
+                 <iframe allowfullscreen="allowfullscreen" allow="clipboard-write" scrolling="no" class="fp-iframe" style="border: 1px solid lightgray; width: 100%; height: 520px; border-radius: 15px;" src="https://heyzine.com/flip-book/480aa817e0.html"></iframe>
+            </div>
+        </section>
+        
+        <!-- ============================ -->
+        <!-- Seção 4 – Mamães Encantadas  -->
+        <!-- ============================ -->
+        <section id="depoimentos" style="margin-bottom: 50px;">
+            <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44; margin-bottom: 30px;">O que as mamães estão dizendo:</h2>
+            
+            <div style="background-color: #FFF0F5; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid white; position: relative; overflow: hidden;">
+                <i class="fa-solid fa-quote-left" style="position: absolute; top: -10px; left: 10px; font-size: 60px; color: rgba(255, 192, 203, 0.5); z-index: 1;"></i>
+                <div style="position: relative; z-index: 2;">
+                    <div style="color: #FFD700; margin-bottom: 10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p style="margin: 0; font-style: italic;">“Minha filha simplesmente ama! É a primeira vez que vejo ela aprender sobre a Bíblia de forma tão divertida.”</p>
+                    <p style="margin: 10px 0 0 0; font-weight: 600; color: #DB7093;">- Mamãe Ana P.</p>
+                </div>
             </div>
 
-            <!-- 8. FAQ – perguntas e respostas -->
-            <div class="faq-section">
-                <h2>❓ Perguntas frequentes</h2>
-                <div class="faq-item">
-                    <h3>Preciso ter experiência na cozinha?</h3>
-                    <p>Não! O método foi feito para iniciantes. Basta seguir o passo a passo em vídeo.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>É caro produzir o Mochi?</h3>
-                    <p>De jeito nenhum! Cada unidade custa centavos para produzir e você pode vender por um valor alto, com muita margem de lucro.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Em quanto tempo vou começar a vender?</h3>
-                    <p>Se aplicar as estratégias, é possível fechar suas primeiras encomendas já no primeiro final de semana.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Funciona mesmo sem cozinha profissional?</h3>
-                    <p>Sim. Você só precisa da sua cozinha comum. Não exige fogão nem forno.</p>
+            <div style="background-color: #F0FFF0; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid white; position: relative; overflow: hidden;">
+                <i class="fa-solid fa-quote-left" style="position: absolute; top: -10px; left: 10px; font-size: 60px; color: rgba(152, 251, 152, 0.5); z-index: 1;"></i>
+                <div style="position: relative; z-index: 2;">
+                     <div style="color: #FFD700; margin-bottom: 10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p style="margin: 0; font-style: italic;">“Comprei sem esperar muito, mas foi a melhor coisa! Meu filho largou o tablet e ficou animado com as atividades.”</p>
+                    <p style="margin: 10px 0 0 0; font-weight: 600; color: #3CB371;">- Mamãe Carla M.</p>
                 </div>
             </div>
+        </section>
+        
+        <!-- ============================ -->
+        <!-- Seção 5 – Oferta Irresistível -->
+        <!-- ============================ -->
+        <section id="oferta" style="background: linear-gradient(to top, #FFFFE0, #FFFACD); border: 4px solid white; border-radius: 30px; padding: 30px; margin-bottom: 50px; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2); outline: 4px solid #FFD700;">
+            <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44; margin-top: 0;">
+                <i class="fa-solid fa-star" style="color: #FFA500;"></i> Oferta Especial por Tempo Limitado! <i class="fa-solid fa-star" style="color: #FFA500;"></i>
+            </h2>
+            <p style="font-size: 20px;">De <span style="text-decoration: line-through;">R$29,90</span> por apenas:</p>
+            <div style="font-size: 80px; font-family: 'Fredoka One', cursive; color: #3CB371; margin: 10px 0; text-shadow: 3px 3px 0px white;">
+                R$1,99
+            </div>
+            <p style="font-size: 15px; background-color: #FF6347; color: white; display: inline-block; padding: 5px 15px; border-radius: 20px; font-weight: 600;">Atenção: Acesso promocional pode encerrar a qualquer momento!</p>
+            
+            <!-- BOTÃO COM LINK DE CHECKOUT -->
+            <a href="https://checkout.seguropagar.site/VCCL1O8SC8AX" style="display: block; background: linear-gradient(45deg, #32CD32, #98FB98); color: white; padding: 20px 30px; border-radius: 20px; text-decoration: none; font-family: 'Baloo 2', cursive; font-size: 24px; box-shadow: 0 8px 15px rgba(50, 205, 50, 0.3); border-bottom: 5px solid #228B22; margin-top: 30px; animation: pulse 2s infinite; transition: all 0.2s ease;">
+                <i class="fa-solid fa-gift"></i> SIM! QUERO O MEU ACESSO MÁGICO!
+            </a>
+        </section>
 
-        </div>
-        <!-- ======================================================= -->
-        <!-- FIM DA SEÇÃO DE OFERTA -->
-        <!-- ======================================================= -->
+        <!-- ============================ -->
+        <!-- Seção 6 – Garantia de Sonho  -->
+        <!-- ============================ -->
+        <section id="garantia" style="display: flex; align-items: center; justify-content: center; background-color: #F0F8FF; padding: 30px; border-radius: 20px; margin-bottom: 50px; flex-wrap: wrap; border: 4px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div style="flex: 1; min-width: 100px; max-width: 150px; padding-right: 20px;">
+                 <i class="fa-solid fa-shield-heart" style="font-size: 90px; color: #87CEEB; text-shadow: 0 0 15px rgba(135, 206, 235, 0.7);"></i>
+            </div>
+            <div style="flex: 2; min-width: 250px; text-align: left;">
+                <h3 style="font-family: 'Baloo 2', cursive; color: #4682B4; font-size: 24px; margin-top: 0;">Garantia Incondicional de 30 Dias</h3>
+                <p style="margin-bottom: 0; line-height: 1.6;">
+                    Seu risco é <strong>ZERO</strong>. Se por qualquer motivo você não se apaixonar pelo material, basta nos avisar e devolvemos 100% do seu dinheiro, sem perguntas.
+                </p>
+            </div>
+        </section>
+
+        <!-- ============================ -->
+        <!-- Seção 7 – Dúvidas Frequentes -->
+        <!-- ============================ -->
+        <section id="faq" style="text-align: left; max-width: 700px; margin: 0 auto;">
+            <h2 style="font-family: 'Baloo 2', cursive; text-align: center; font-size: 32px; color: #352F44; margin-bottom: 30px;">Tirando suas Dúvidas</h2>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>Como vou receber o material?</h4>
+                <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);">
+                    <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>Direto no seu WhatsApp, logo após a confirmação da compra. Simples e rápido!
+                </p>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>É físico ou digital?</h4>
+                <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);">
+                    <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>É 100% digital em formato PDF + Flipbook. Você pode acessar do celular, tablet ou computador e imprimir se quiser.
+                </p>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>Preciso pagar mensalidade?</h4>
+                <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);">
+                    <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>Não! É um pagamento único de R$1,99 e o acesso é seu para sempre (vitalício).
+                </p>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer style="margin-top: 50px; padding-top: 20px; border-top: 2px dashed #EAE0D5;">
+            <p style="font-size: 12px; color: #8C849B;">Todos os direitos reservados © 2024</p>
+            <p style="font-size: 10px; color: #aaa;">Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.</p>
+        </footer>
 
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // --- Configuração ---
-            const buttonDelayInMinutes = 5; // A oferta aparece após 5 minutos
-            const buttonDelayInMilliseconds = buttonDelayInMinutes * 60 * 1000;
-
-            // --- Elementos ---
-            const offerSection = document.getElementById('offer-section');
-
-            // Função para mostrar a seção da oferta
-            function showOfferElements() {
-                offerSection.style.display = 'block';
-            }
-
-            // Define o tempo para mostrar os elementos
-            setTimeout(showOfferElements, buttonDelayInMilliseconds);
-        });
-    </script>
 
 </body>
 </html>
