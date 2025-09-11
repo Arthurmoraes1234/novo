@@ -13,13 +13,121 @@
     <!-- Ícones do Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <!-- CSS para animações (código do slider antigo removido) -->
+    <!-- CSS para animações e o SLIDER COM SETAS -->
     <style>
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+        
+        /* --- ESTILOS DO SLIDER DE IMAGENS --- */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .slides {
+            display: flex;
+            width: 3100%; /* 100% * 31 slides */
+            transition: transform 0.4s ease-in-out;
+        }
+        .slides img {
+            width: calc(100% / 31); /* Divide a largura total pelo número de slides */
+            height: auto;
+        }
+        .slider-container input {
+            display: none;
+        }
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .navigation label {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #6A5ACD;
+            padding: 10px 15px;
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+        .navigation label:hover {
+            transform: scale(1.1);
+        }
+
+        /* Lógica de navegação do Slider */
+        #slide1:checked ~ .slides { transform: translateX(0); }
+        #slide2:checked ~ .slides { transform: translateX(calc(-100% / 31 * 1)); }
+        #slide3:checked ~ .slides { transform: translateX(calc(-100% / 31 * 2)); }
+        #slide4:checked ~ .slides { transform: translateX(calc(-100% / 31 * 3)); }
+        #slide5:checked ~ .slides { transform: translateX(calc(-100% / 31 * 4)); }
+        #slide6:checked ~ .slides { transform: translateX(calc(-100% / 31 * 5)); }
+        #slide7:checked ~ .slides { transform: translateX(calc(-100% / 31 * 6)); }
+        #slide8:checked ~ .slides { transform: translateX(calc(-100% / 31 * 7)); }
+        #slide9:checked ~ .slides { transform: translateX(calc(-100% / 31 * 8)); }
+        #slide10:checked ~ .slides { transform: translateX(calc(-100% / 31 * 9)); }
+        #slide11:checked ~ .slides { transform: translateX(calc(-100% / 31 * 10)); }
+        #slide12:checked ~ .slides { transform: translateX(calc(-100% / 31 * 11)); }
+        #slide13:checked ~ .slides { transform: translateX(calc(-100% / 31 * 12)); }
+        #slide14:checked ~ .slides { transform: translateX(calc(-100% / 31 * 13)); }
+        #slide15:checked ~ .slides { transform: translateX(calc(-100% / 31 * 14)); }
+        #slide16:checked ~ .slides { transform: translateX(calc(-100% / 31 * 15)); }
+        #slide17:checked ~ .slides { transform: translateX(calc(-100% / 31 * 16)); }
+        #slide18:checked ~ .slides { transform: translateX(calc(-100% / 31 * 17)); }
+        #slide19:checked ~ .slides { transform: translateX(calc(-100% / 31 * 18)); }
+        #slide20:checked ~ .slides { transform: translateX(calc(-100% / 31 * 19)); }
+        #slide21:checked ~ .slides { transform: translateX(calc(-100% / 31 * 20)); }
+        #slide22:checked ~ .slides { transform: translateX(calc(-100% / 31 * 21)); }
+        #slide23:checked ~ .slides { transform: translateX(calc(-100% / 31 * 22)); }
+        #slide24:checked ~ .slides { transform: translateX(calc(-100% / 31 * 23)); }
+        #slide25:checked ~ .slides { transform: translateX(calc(-100% / 31 * 24)); }
+        #slide26:checked ~ .slides { transform: translateX(calc(-100% / 31 * 25)); }
+        #slide27:checked ~ .slides { transform: translateX(calc(-100% / 31 * 26)); }
+        #slide28:checked ~ .slides { transform: translateX(calc(-100% / 31 * 27)); }
+        #slide29:checked ~ .slides { transform: translateX(calc(-100% / 31 * 28)); }
+        #slide30:checked ~ .slides { transform: translateX(calc(-100% / 31 * 29)); }
+        #slide31:checked ~ .slides { transform: translateX(calc(-100% / 31 * 30)); }
+
+        #slide1:checked ~ .navigation .nav-slide1,
+        #slide2:checked ~ .navigation .nav-slide2,
+        #slide3:checked ~ .navigation .nav-slide3,
+        #slide4:checked ~ .navigation .nav-slide4,
+        #slide5:checked ~ .navigation .nav-slide5,
+        #slide6:checked ~ .navigation .nav-slide6,
+        #slide7:checked ~ .navigation .nav-slide7,
+        #slide8:checked ~ .navigation .nav-slide8,
+        #slide9:checked ~ .navigation .nav-slide9,
+        #slide10:checked ~ .navigation .nav-slide10,
+        #slide11:checked ~ .navigation .nav-slide11,
+        #slide12:checked ~ .navigation .nav-slide12,
+        #slide13:checked ~ .navigation .nav-slide13,
+        #slide14:checked ~ .navigation .nav-slide14,
+        #slide15:checked ~ .navigation .nav-slide15,
+        #slide16:checked ~ .navigation .nav-slide16,
+        #slide17:checked ~ .navigation .nav-slide17,
+        #slide18:checked ~ .navigation .nav-slide18,
+        #slide19:checked ~ .navigation .nav-slide19,
+        #slide20:checked ~ .navigation .nav-slide20,
+        #slide21:checked ~ .navigation .nav-slide21,
+        #slide22:checked ~ .navigation .nav-slide22,
+        #slide23:checked ~ .navigation .nav-slide23,
+        #slide24:checked ~ .navigation .nav-slide24,
+        #slide25:checked ~ .navigation .nav-slide25,
+        #slide26:checked ~ .navigation .nav-slide26,
+        #slide27:checked ~ .navigation .nav-slide27,
+        #slide28:checked ~ .navigation .nav-slide28,
+        #slide29:checked ~ .navigation .nav-slide29,
+        #slide30:checked ~ .navigation .nav-slide30,
+        #slide31:checked ~ .navigation .nav-slide31 { display: flex; }
+        .navigation-arrows { display: none; }
     </style>
     
     <!-- SCRIPTS DE TRACKING -->
@@ -54,68 +162,43 @@
                 </h2>
                 <div style="border: 8px solid white; border-radius: 25px; padding: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background-color: #F0F8FF;">
                      
-                    <!-- NOVO IFRAME DO FLIPBOOK INSERIDO AQUI -->
-                    <iframe allowfullscreen="" allow="clipboard-write" scrolling="no" class="fp-iframe" style="border: 1px solid lightgray; width: 100%; height: 400px; border-radius: 15px;" src="https://heyzine.com/flip-book/dcddd02f30.html"></iframe>
-                    
-                </div>
-            </div>
-            
-            <a href="#oferta" style="display: inline-block; background: linear-gradient(45deg, #87CEEB, #97E7E1); color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-family: 'Baloo 2', cursive; font-size: 20px; box-shadow: 0 6px 15px rgba(135, 206, 235, 0.4); transition: all 0.3s ease; border-bottom: 4px solid #4682B4;">
-                <i class="fa-solid fa-lock"></i> Quero o acesso por R$1,99
-            </a>
-        </section>
-
-        <!-- O RESTANTE DO CÓDIGO PERMANECE IGUAL -->
-        
-        <section id="o-que-recebe" style="background-color: rgba(230, 230, 250, 0.5); padding: 40px 20px;">
-             <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44; margin-top: 0; margin-bottom: 40px;">O que tem no nosso baú mágico?</h2>
-             <div style="max-width: 500px; margin: 0 auto; font-size: 17px; line-height: 1.8;">
-                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;"> <i class="fa-solid fa-circle-check" style="font-size: 30px; color: #fff; background-color: #6A5ACD; padding: 10px; border-radius: 50%; margin-right: 15px;"></i> <p style="margin: 0;"><strong>30 atividades cristãs</strong> educativas para crianças de 3 a 9 anos</p> </div>
-                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;"> <i class="fa-solid fa-book-open-reader" style="font-size: 30px; color: #fff; background-color: #87CEEB; padding: 10px; border-radius: 50%; margin-right: 15px;"></i> <p style="margin: 0;"><strong>Livrinho em PDF para impressão</strong> e acesso online direto no WhatsApp</p> </div>
-                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;"> <i class="fa-solid fa-bolt" style="font-size: 30px; color: #fff; background-color: #FFD700; padding: 10px; border-radius: 50%; margin-right: 15px;"></i> <p style="margin: 0;"><strong>Acesso imediato e vitalício</strong> – nada de esperar dias!</p> </div>
-                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;"> <i class="fa-brands fa-whatsapp" style="font-size: 30px; color: #fff; background-color: #25D366; padding: 10px; border-radius: 50%; margin-right: 15px;"></i> <p style="margin: 0;">Entrega direto no seu <strong>WhatsApp</strong></p> </div>
-                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;"> <i class="fa-solid fa-shield-heart" style="font-size: 30px; color: #fff; background-color: #FF69B4; padding: 10px; border-radius: 50%; margin-right: 15px;"></i> <p style="margin: 0;"><strong>Garantia de 30 dias</strong> – se não amar, devolvemos seu dinheiro</p> </div>
-             </div>
-        </section>
-        
-        <section id="depoimentos" style="margin-bottom: 50px; padding-top: 30px;">
-            <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44; margin-bottom: 30px;">O que as mamães estão dizendo:</h2>
-            <div style="background-color: #FFF0F5; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid white; position: relative; overflow: hidden;"> <i class="fa-solid fa-quote-left" style="position: absolute; top: -10px; left: 10px; font-size: 60px; color: rgba(255, 192, 203, 0.5); z-index: 1;"></i> <div style="position: relative; z-index: 2;"> <div style="color: #FFD700; margin-bottom: 10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div> <p style="margin: 0; font-style: italic;">“Minha filha simplesmente ama! É a primeira vez que vejo ela aprender sobre a Bíblia de forma tão divertida.”</p> <p style="margin: 10px 0 0 0; font-weight: 600; color: #DB7093;">- Mamãe Ana P.</p> </div> </div>
-            <div style="background-color: #F0FFF0; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid white; position: relative; overflow: hidden;"> <i class="fa-solid fa-quote-left" style="position: absolute; top: -10px; left: 10px; font-size: 60px; color: rgba(152, 251, 152, 0.5); z-index: 1;"></i> <div style="position: relative; z-index: 2;"> <div style="color: #FFD700; margin-bottom: 10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div> <p style="margin: 0; font-style: italic;">“Comprei sem esperar muito, mas foi a melhor coisa! Meu filho largou o tablet e ficou animado com as atividades.”</p> <p style="margin: 10px 0 0 0; font-weight: 600; color: #3CB371;">- Mamãe Carla M.</p> </div> </div>
-        </section>
-        
-        <section id="oferta" style="background: linear-gradient(to top, #FFFFE0, #FFFACD); border: 4px solid white; border-radius: 30px; padding: 30px; margin-bottom: 50px; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2); outline: 4px solid #FFD700;">
-            <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44; margin-top: 0;"> <i class="fa-solid fa-star" style="color: #FFA500;"></i> Oferta Especial por Tempo Limitado! <i class="fa-solid fa-star" style="color: #FFA500;"></i> </h2>
-            <p style="font-size: 20px;">De <span style="text-decoration: line-through;">R$29,90</span> por apenas:</p>
-            <div style="font-size: 80px; font-family: 'Fredoka One', cursive; color: #3CB371; margin: 10px 0; text-shadow: 3px 3px 0px white;"> R$1,99 </div>
-            <p style="font-size: 15px; background-color: #FF6347; color: white; display: inline-block; padding: 5px 15px; border-radius: 20px; font-weight: 600;">Atenção: Acesso promocional pode encerrar a qualquer momento!</p>
-            <a href="https://checkout.seguropagar.site/VCCL1O8SC8AX" style="display: block; background: linear-gradient(45deg, #32CD32, #98FB98); color: white; padding: 20px 30px; border-radius: 20px; text-decoration: none; font-family: 'Baloo 2', cursive; font-size: 24px; box-shadow: 0 8px 15px rgba(50, 205, 50, 0.3); border-bottom: 5px solid #228B22; margin-top: 30px; animation: pulse 2s infinite; transition: all 0.2s ease;"> <i class="fa-solid fa-gift"></i> SIM! QUERO O MEU ACESSO MÁGICO! </a>
-        </section>
-
-        <section id="garantia" style="display: flex; align-items: center; justify-content: center; background-color: #F0F8FF; padding: 30px; border-radius: 20px; margin-bottom: 50px; flex-wrap: wrap; border: 4px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-            <div style="flex: 1; min-width: 100px; max-width: 150px; padding-right: 20px;"> <i class="fa-solid fa-shield-heart" style="font-size: 90px; color: #87CEEB; text-shadow: 0 0 15px rgba(135, 206, 235, 0.7);"></i> </div>
-            <div style="flex: 2; min-width: 250px; text-align: left;"> <h3 style="font-family: 'Baloo 2', cursive; color: #4682B4; font-size: 24px; margin-top: 0;">Garantia Incondicional de 30 Dias</h3> <p style="margin-bottom: 0; line-height: 1.6;"> Seu risco é <strong>ZERO</strong>. Se por qualquer motivo você não se apaixonar pelo material, basta nos avisar e devolvemos 100% do seu dinheiro, sem perguntas. </p> </div>
-        </section>
-
-        <section id="faq" style="text-align: left; max-width: 700px; margin: 0 auto;">
-            <h2 style="font-family: 'Baloo 2', cursive; text-align: center; font-size: 32px; color: #352F44; margin-bottom: 30px;">Tirando suas Dúvidas</h2>
-            <div style="margin-bottom: 15px;"> <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>Como vou receber o material?</h4> <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);"> <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>Direto no seu WhatsApp, logo após a confirmação da compra. Simples e rápido! </p> </div>
-            <div style="margin-bottom: 15px;"> <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>É físico ou digital?</h4> <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);"> <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>É 100% digital em formato PDF + Flipbook. Você pode acessar do celular, tablet ou computador e imprimir se quiser. </p> </div>
-            <div style="margin-bottom: 15px;"> <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>Preciso pagar mensalidade?</h4> <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);"> <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>Não! É um pagamento único de R$1,99 e o acesso é seu para sempre (vitalício). </p> </div>
-        </section>
-
-        <footer style="margin-top: 50px; padding-top: 20px; border-top: 2px dashed #EAE0D5;">
-            <p style="font-size: 12px; color: #8C849B;">Todos os direitos reservados © 2024</p>
-            <p style="font-size: 10px; color: #aaa;">Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.</p>
-        </footer>
-    </div>
-</body>
-</html>                     <img src="https://i.ibb.co/mS6VpP6/page26.jpg" alt="Atividade 24">
-                            <img src="https://i.ibb.co/fS685wz/page27.jpg" alt="Atividade 25">
-                            <img src="https://i.ibb.co/8Yj00Gk/page28.jpg" alt="Atividade 26">
-                            <img src="https://i.ibb.co/YyY1M00/page29.jpg" alt="Atividade 27">
-                            <img src="https://i.ibb.co/2Y8K367/page30.jpg" alt="Atividade 29">
-                            <img src="https://i.ibb.co/JqjP027/page31.jpg" alt="Atividade 30">
+                    <!-- INÍCIO DO SLIDER -->
+                    <div class="slider-container">
+                        <!-- Radio buttons para controlar os slides -->
+                        <input type="radio" name="slider" id="slide1" checked> <input type="radio" name="slider" id="slide2"> <input type="radio" name="slider" id="slide3"> <input type="radio" name="slider" id="slide4"> <input type="radio" name="slider" id="slide5"> <input type="radio" name="slider" id="slide6"> <input type="radio" name="slider" id="slide7"> <input type="radio" name="slider" id="slide8"> <input type="radio" name="slider" id="slide9"> <input type="radio" name="slider" id="slide10"> <input type="radio" name="slider" id="slide11"> <input type="radio" name="slider" id="slide12"> <input type="radio" name="slider" id="slide13"> <input type="radio" name="slider" id="slide14"> <input type="radio" name="slider" id="slide15"> <input type="radio" name="slider" id="slide16"> <input type="radio" name="slider" id="slide17"> <input type="radio" name="slider" id="slide18"> <input type="radio" name="slider" id="slide19"> <input type="radio" name="slider" id="slide20"> <input type="radio" name="slider" id="slide21"> <input type="radio" name="slider" id="slide22"> <input type="radio" name="slider" id="slide23"> <input type="radio" name="slider" id="slide24"> <input type="radio" name="slider" id="slide25"> <input type="radio" name="slider" id="slide26"> <input type="radio" name="slider" id="slide27"> <input type="radio" name="slider" id="slide28"> <input type="radio" name="slider" id="slide29"> <input type="radio" name="slider" id="slide30"> <input type="radio" name="slider" id="slide31">
+                        
+                        <div class="slides">
+                            <img src="https://i.imgur.com/nO2aFDg.jpeg" alt="Página 1">
+                            <img src="https://i.imgur.com/unhcsb2.jpeg" alt="Página 2">
+                            <img src="https://i.imgur.com/Nd1vltm.png" alt="Página 3">
+                            <img src="https://i.imgur.com/f2Emkg1.jpeg" alt="Página 4">
+                            <img src="https://i.imgur.com/SxCtpzi.png" alt="Página 5">
+                            <img src="https://i.imgur.com/IM6cqB8.png" alt="Página 6">
+                            <img src="https://i.imgur.com/7c6ln2V.png" alt="Página 7">
+                            <img src="https://i.imgur.com/nQ3nDUZ.jpeg" alt="Página 8">
+                            <img src="https://i.imgur.com/8Zw5Eb8.png" alt="Página 9">
+                            <img src="https://i.imgur.com/8upYcU6.jpeg" alt="Página 10">
+                            <img src="https://i.imgur.com/1wCE9Mn.jpeg" alt="Página 11">
+                            <img src="https://i.imgur.com/N62RI7k.png" alt="Página 12">
+                            <img src="https://i.imgur.com/MbT8FP3.jpeg" alt="Página 13">
+                            <img src="https://i.imgur.com/HtUn4H2.jpeg" alt="Página 14">
+                            <img src="https://i.imgur.com/slIPWZk.jpeg" alt="Página 15">
+                            <img src="https://i.imgur.com/fjd751S.png" alt="Página 16">
+                            <img src="https://i.imgur.com/uGgFSGi.png" alt="Página 17">
+                            <img src="https://i.imgur.com/EcTOi6K.jpeg" alt="Página 18">
+                            <img src="https://i.imgur.com/RLLHJUA.png" alt="Página 19">
+                            <img src="https://i.imgur.com/bYHDXzr.png" alt="Página 20">
+                            <img src="https://i.imgur.com/7U4jiTX.png" alt="Página 21">
+                            <img src="https://i.imgur.com/jq1QbKA.jpeg" alt="Página 22">
+                            <img src="https://i.imgur.com/VHCqYDS.png" alt="Página 23">
+                            <img src="https://i.imgur.com/N9QbbaK.jpeg" alt="Página 24">
+                            <img src="https://i.imgur.com/biuMUFo.png" alt="Página 25">
+                            <img src="https://i.imgur.com/eMVffU7.png" alt="Página 26">
+                            <img src="https://i.imgur.com/0B1zkjo.jpeg" alt="Página 27">
+                            <img src="https://i.imgur.com/Pe7hn3q.png" alt="Página 28">
+                            <img src="https://i.imgur.com/0FtYQFu.png" alt="Página 29">
+                            <img src="https://i.imgur.com/ZYQ54Px.jpeg" alt="Página 30">
+                            <img src="https://i.imgur.com/fsK3q4b.png" alt="Página 31">
                         </div>
 
                         <!-- Setas de navegação -->
