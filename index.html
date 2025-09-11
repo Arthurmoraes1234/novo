@@ -13,58 +13,134 @@
     <!-- Ícones do Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <!-- CSS para animações (CSS do slider foi removido) -->
+    <!-- CSS para animações e o novo SLIDER COM SETAS -->
     <style>
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+        
+        /* --- ESTILOS DO NOVO SLIDER --- */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .slides {
+            display: flex;
+            width: 3100%; /* 100% * 31 slides */
+            transition: transform 0.4s ease-in-out;
+        }
+        .slides img {
+            width: calc(100% / 31); /* Divide a largura total pelo número de slides */
+            height: auto;
+        }
+        .slider-container input {
+            display: none;
+        }
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .navigation label {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #6A5ACD;
+            padding: 10px 15px;
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+        .navigation label:hover {
+            transform: scale(1.1);
+        }
+
+        /* A MÁGICA DO SLIDER CSS */
+        #slide1:checked ~ .slides { transform: translateX(0); }
+        #slide2:checked ~ .slides { transform: translateX(calc(-100% / 31 * 1)); }
+        #slide3:checked ~ .slides { transform: translateX(calc(-100% / 31 * 2)); }
+        #slide4:checked ~ .slides { transform: translateX(calc(-100% / 31 * 3)); }
+        #slide5:checked ~ .slides { transform: translateX(calc(-100% / 31 * 4)); }
+        #slide6:checked ~ .slides { transform: translateX(calc(-100% / 31 * 5)); }
+        #slide7:checked ~ .slides { transform: translateX(calc(-100% / 31 * 6)); }
+        #slide8:checked ~ .slides { transform: translateX(calc(-100% / 31 * 7)); }
+        #slide9:checked ~ .slides { transform: translateX(calc(-100% / 31 * 8)); }
+        #slide10:checked ~ .slides { transform: translateX(calc(-100% / 31 * 9)); }
+        #slide11:checked ~ .slides { transform: translateX(calc(-100% / 31 * 10)); }
+        #slide12:checked ~ .slides { transform: translateX(calc(-100% / 31 * 11)); }
+        #slide13:checked ~ .slides { transform: translateX(calc(-100% / 31 * 12)); }
+        #slide14:checked ~ .slides { transform: translateX(calc(-100% / 31 * 13)); }
+        #slide15:checked ~ .slides { transform: translateX(calc(-100% / 31 * 14)); }
+        #slide16:checked ~ .slides { transform: translateX(calc(-100% / 31 * 15)); }
+        #slide17:checked ~ .slides { transform: translateX(calc(-100% / 31 * 16)); }
+        #slide18:checked ~ .slides { transform: translateX(calc(-100% / 31 * 17)); }
+        #slide19:checked ~ .slides { transform: translateX(calc(-100% / 31 * 18)); }
+        #slide20:checked ~ .slides { transform: translateX(calc(-100% / 31 * 19)); }
+        #slide21:checked ~ .slides { transform: translateX(calc(-100% / 31 * 20)); }
+        #slide22:checked ~ .slides { transform: translateX(calc(-100% / 31 * 21)); }
+        #slide23:checked ~ .slides { transform: translateX(calc(-100% / 31 * 22)); }
+        #slide24:checked ~ .slides { transform: translateX(calc(-100% / 31 * 23)); }
+        #slide25:checked ~ .slides { transform: translateX(calc(-100% / 31 * 24)); }
+        #slide26:checked ~ .slides { transform: translateX(calc(-100% / 31 * 25)); }
+        #slide27:checked ~ .slides { transform: translateX(calc(-100% / 31 * 26)); }
+        #slide28:checked ~ .slides { transform: translateX(calc(-100% / 31 * 27)); }
+        #slide29:checked ~ .slides { transform: translateX(calc(-100% / 31 * 28)); }
+        #slide30:checked ~ .slides { transform: translateX(calc(-100% / 31 * 29)); }
+        #slide31:checked ~ .slides { transform: translateX(calc(-100% / 31 * 30)); }
+
+        #slide1:checked ~ .navigation .nav-slide1,
+        #slide2:checked ~ .navigation .nav-slide2,
+        #slide3:checked ~ .navigation .nav-slide3,
+        #slide4:checked ~ .navigation .nav-slide4,
+        #slide5:checked ~ .navigation .nav-slide5,
+        #slide6:checked ~ .navigation .nav-slide6,
+        #slide7:checked ~ .navigation .nav-slide7,
+        #slide8:checked ~ .navigation .nav-slide8,
+        #slide9:checked ~ .navigation .nav-slide9,
+        #slide10:checked ~ .navigation .nav-slide10,
+        #slide11:checked ~ .navigation .nav-slide11,
+        #slide12:checked ~ .navigation .nav-slide12,
+        #slide13:checked ~ .navigation .nav-slide13,
+        #slide14:checked ~ .navigation .nav-slide14,
+        #slide15:checked ~ .navigation .nav-slide15,
+        #slide16:checked ~ .navigation .nav-slide16,
+        #slide17:checked ~ .navigation .nav-slide17,
+        #slide18:checked ~ .navigation .nav-slide18,
+        #slide19:checked ~ .navigation .nav-slide19,
+        #slide20:checked ~ .navigation .nav-slide20,
+        #slide21:checked ~ .navigation .nav-slide21,
+        #slide22:checked ~ .navigation .nav-slide22,
+        #slide23:checked ~ .navigation .nav-slide23,
+        #slide24:checked ~ .navigation .nav-slide24,
+        #slide25:checked ~ .navigation .nav-slide25,
+        #slide26:checked ~ .navigation .nav-slide26,
+        #slide27:checked ~ .navigation .nav-slide27,
+        #slide28:checked ~ .navigation .nav-slide28,
+        #slide29:checked ~ .navigation .nav-slide29,
+        #slide30:checked ~ .navigation .nav-slide30,
+        #slide31:checked ~ .navigation .nav-slide31 { display: flex; }
+        .navigation-arrows { display: none; }
     </style>
     
-    <!-- SCRIPTS ADICIONADOS -->
-    <script
-      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-      data-utmify-prevent-xcod-sck
-      data-utmify-prevent-subids
-      async
-      defer
-    ></script>
-
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "r8fcmye1fm");
-    </script>
-
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1385762182842902');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1385762182842902&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- FIM DOS SCRIPTS ADICIONADOS -->
+    <!-- SCRIPTS DE TRACKING -->
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+    <script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "r8fcmye1fm"); </script>
+    <script> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1385762182842902'); fbq('track', 'PageView'); </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1385762182842902&ev=PageView&noscript=1" /></noscript>
     
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(180deg, #FFF9F5 0%, #F8F0FF 100%); color: #5C5470;">
 
-    <!-- Container Principal -->
     <div style="max-width: 800px; margin: 0 auto; padding: 20px; text-align: center;">
 
-        <!-- ============================ -->
-        <!-- Seção 1 – Hero Mágico        -->
-        <!-- ============================ -->
         <section id="hero" style="padding: 20px 10px;">
             <img src="https://i.imgur.com/2AJJ7RP.png" alt="Logo Atividades Cristãs" style="width: 140px; height: auto; margin-bottom: 10px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">
 
@@ -80,16 +156,117 @@
                 <i class="fa-solid fa-cross" style="color: #DB7093; margin-right: 8px;"></i>Seus filhos no caminho de cristo!
             </p>
             
-            <!-- SEÇÃO DE PRÉVIA ATUALIZADA COM FLIPPINGBOOK -->
             <div id="previa" style="margin-top: 30px; margin-bottom: 30px;">
                 <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44;">
                     <i class="fa-solid fa-hand-sparkles" style="color: #FFB6C1;"></i> Uma espiadinha no nosso material...
                 </h2>
                 <div style="border: 8px solid white; border-radius: 25px; padding: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background-color: #F0F8FF;">
                      
-                    <!-- INÍCIO DO CÓDIGO DO FLIPPINGBOOK -->
-                    <a href="https://online.flippingbook.com/view/971641942/" class="fbo-embed" data-fbo-id="fe606a3bd1" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Ligue os pontos – Arca de Noé Colorir – Jonas e o grande pe…</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=971641942"></script>
-                    <!-- FIM DO CÓDIGO DO FLIPPINGBOOK -->
+                    <!-- INÍCIO DO SLIDER -->
+                    <div class="slider-container">
+                        <!-- Radio buttons para controlar os slides -->
+                        <input type="radio" name="slider" id="slide1" checked>
+                        <input type="radio" name="slider" id="slide2">
+                        <input type="radio" name="slider" id="slide3">
+                        <input type="radio" name="slider" id="slide4">
+                        <input type="radio" name="slider" id="slide5">
+                        <input type="radio" name="slider" id="slide6">
+                        <input type="radio" name="slider" id="slide7">
+                        <input type="radio" name="slider" id="slide8">
+                        <input type="radio" name="slider" id="slide9">
+                        <input type="radio" name="slider" id="slide10">
+                        <input type="radio" name="slider" id="slide11">
+                        <input type="radio" name="slider" id="slide12">
+                        <input type="radio" name="slider" id="slide13">
+                        <input type="radio" name="slider" id="slide14">
+                        <input type="radio" name="slider" id="slide15">
+                        <input type="radio" name="slider" id="slide16">
+                        <input type="radio" name="slider" id="slide17">
+                        <input type="radio" name="slider" id="slide18">
+                        <input type="radio" name="slider" id="slide19">
+                        <input type="radio" name="slider" id="slide20">
+                        <input type="radio" name="slider" id="slide21">
+                        <input type="radio" name="slider" id="slide22">
+                        <input type="radio" name="slider" id="slide23">
+                        <input type="radio" name="slider" id="slide24">
+                        <input type="radio" name="slider" id="slide25">
+                        <input type="radio" name="slider" id="slide26">
+                        <input type="radio" name="slider" id="slide27">
+                        <input type="radio" name="slider" id="slide28">
+                        <input type="radio" name="slider" id="slide29">
+                        <input type="radio" name="slider" id="slide30">
+                        <input type="radio" name="slider" id="slide31">
+                        
+                        <div class="slides">
+                            <img src="https://i.ibb.co/L5w1j2L/page1.jpg" alt="Capa">
+                            <img src="https://i.ibb.co/cCtK5jM/page2.jpg" alt="Queridos Pais">
+                            <img src="https://i.ibb.co/N2zDkC7/page3.jpg" alt="Atividade 1">
+                            <img src="https://i.ibb.co/3k3Qk8r/page4.jpg" alt="Atividade 2">
+                            <img src="https://i.ibb.co/2d12J0h/page5.jpg" alt="Atividade 3">
+                            <img src="https://i.ibb.co/tD3F5qN/page6.jpg" alt="Atividade 4">
+                            <img src="https://i.ibb.co/HhzQ0tV/page7.jpg" alt="Atividade 5">
+                            <img src="https://i.ibb.co/jGGhW7J/page8.jpg" alt="Atividade 6">
+                            <img src="https://i.ibb.co/Wc6q7w5/page9.jpg" alt="Atividade 7">
+                            <img src="https://i.ibb.co/2Z50YfV/page10.jpg" alt="Atividade 8">
+                            <img src="https://i.ibb.co/4T71P6W/page11.jpg" alt="Atividade 9">
+                            <img src="https://i.ibb.co/680373G/page12.jpg" alt="Atividade 10">
+                            <img src="https://i.ibb.co/f2s7F4g/page13.jpg" alt="Atividade 11">
+                            <img src="https://i.ibb.co/k4H7Tqg/page14.jpg" alt="Atividade 12">
+                            <img src="https://i.ibb.co/wW4dDqV/page15.jpg" alt="Atividade 13">
+                            <img src="https://i.ibb.co/tZ50h2F/page16.jpg" alt="Atividade 14">
+                            <img src="https://i.ibb.co/VMybJdC/page17.jpg" alt="Atividade 15">
+                            <img src="https://i.ibb.co/C0c9GzY/page18.jpg" alt="Atividade 16">
+                            <img src="https://i.ibb.co/9qP7Fgv/page19.jpg" alt="Atividade 17">
+                            <img src="https://i.ibb.co/b32H3y1/page20.jpg" alt="Atividade 18">
+                            <img src="https://i.ibb.co/D8p4Jd0/page21.jpg" alt="Atividade 19">
+                            <img src="https://i.ibb.co/fH7f6z4/page22.jpg" alt="Atividade 20">
+                            <img src="https://i.ibb.co/sK64hM8/page23.jpg" alt="Atividade 21">
+                            <img src="https://i.ibb.co/pwnvQcW/page24.jpg" alt="Atividade 22">
+                            <img src="https://i.ibb.co/W5sFQR4/page25.jpg" alt="Atividade 23">
+                            <img src="https://i.ibb.co/mS6VpP6/page26.jpg" alt="Atividade 24">
+                            <img src="https://i.ibb.co/fS685wz/page27.jpg" alt="Atividade 25">
+                            <img src="https://i.ibb.co/8Yj00Gk/page28.jpg" alt="Atividade 26">
+                            <img src="https://i.ibb.co/YyY1M00/page29.jpg" alt="Atividade 27">
+                            <img src="https://i.ibb.co/2Y8K367/page30.jpg" alt="Atividade 29">
+                            <img src="https://i.ibb.co/JqjP027/page31.jpg" alt="Atividade 30">
+                        </div>
+
+                        <!-- Setas de navegação -->
+                        <div class="navigation">
+                            <div class="navigation-arrows nav-slide1"><label for="slide31" style="visibility: hidden;"><i class="fas fa-chevron-left"></i></label><label for="slide2"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide2"><label for="slide1"><i class="fas fa-chevron-left"></i></label><label for="slide3"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide3"><label for="slide2"><i class="fas fa-chevron-left"></i></label><label for="slide4"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide4"><label for="slide3"><i class="fas fa-chevron-left"></i></label><label for="slide5"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide5"><label for="slide4"><i class="fas fa-chevron-left"></i></label><label for="slide6"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide6"><label for="slide5"><i class="fas fa-chevron-left"></i></label><label for="slide7"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide7"><label for="slide6"><i class="fas fa-chevron-left"></i></label><label for="slide8"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide8"><label for="slide7"><i class="fas fa-chevron-left"></i></label><label for="slide9"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide9"><label for="slide8"><i class="fas fa-chevron-left"></i></label><label for="slide10"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide10"><label for="slide9"><i class="fas fa-chevron-left"></i></label><label for="slide11"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide11"><label for="slide10"><i class="fas fa-chevron-left"></i></label><label for="slide12"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide12"><label for="slide11"><i class="fas fa-chevron-left"></i></label><label for="slide13"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide13"><label for="slide12"><i class="fas fa-chevron-left"></i></label><label for="slide14"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide14"><label for="slide13"><i class="fas fa-chevron-left"></i></label><label for="slide15"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide15"><label for="slide14"><i class="fas fa-chevron-left"></i></label><label for="slide16"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide16"><label for="slide15"><i class="fas fa-chevron-left"></i></label><label for="slide17"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide17"><label for="slide16"><i class="fas fa-chevron-left"></i></label><label for="slide18"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide18"><label for="slide17"><i class="fas fa-chevron-left"></i></label><label for="slide19"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide19"><label for="slide18"><i class="fas fa-chevron-left"></i></label><label for="slide20"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide20"><label for="slide19"><i class="fas fa-chevron-left"></i></label><label for="slide21"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide21"><label for="slide20"><i class="fas fa-chevron-left"></i></label><label for="slide22"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide22"><label for="slide21"><i class="fas fa-chevron-left"></i></label><label for="slide23"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide23"><label for="slide22"><i class="fas fa-chevron-left"></i></label><label for="slide24"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide24"><label for="slide23"><i class="fas fa-chevron-left"></i></label><label for="slide25"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide25"><label for="slide24"><i class="fas fa-chevron-left"></i></label><label for="slide26"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide26"><label for="slide25"><i class="fas fa-chevron-left"></i></label><label for="slide27"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide27"><label for="slide26"><i class="fas fa-chevron-left"></i></label><label for="slide28"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide28"><label for="slide27"><i class="fas fa-chevron-left"></i></label><label for="slide29"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide29"><label for="slide28"><i class="fas fa-chevron-left"></i></label><label for="slide30"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide30"><label for="slide29"><i class="fas fa-chevron-left"></i></label><label for="slide31"><i class="fas fa-chevron-right"></i></label></div>
+                            <div class="navigation-arrows nav-slide31"><label for="slide30"><i class="fas fa-chevron-left"></i></label><label for="slide1" style="visibility: hidden;"><i class="fas fa-chevron-right"></i></label></div>
+                        </div>
+                    </div>
+                    <!-- FIM DO SLIDER -->
 
                 </div>
             </div>
@@ -99,128 +276,49 @@
             </a>
         </section>
 
-        <!-- ============================ -->
-        <!-- Seção 2 – Encantos Incluídos -->
-        <!-- ============================ -->
+        <!-- O RESTANTE DO CÓDIGO PERMANECE IGUAL -->
+        
         <section id="o-que-recebe" style="background-color: rgba(230, 230, 250, 0.5); padding: 40px 20px;">
              <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44; margin-top: 0; margin-bottom: 40px;">O que tem no nosso baú mágico?</h2>
              <div style="max-width: 500px; margin: 0 auto; font-size: 17px; line-height: 1.8;">
-                
-                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
-                    <i class="fa-solid fa-circle-check" style="font-size: 30px; color: #fff; background-color: #6A5ACD; padding: 10px; border-radius: 50%; margin-right: 15px;"></i>
-                    <p style="margin: 0;"><strong>30 atividades cristãs</strong> educativas para crianças de 3 a 9 anos</p>
-                </div>
-                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
-                    <i class="fa-solid fa-book-open-reader" style="font-size: 30px; color: #fff; background-color: #87CEEB; padding: 10px; border-radius: 50%; margin-right: 15px;"></i>
-                    <p style="margin: 0;"><strong>Livrinho em PDF para impressão</strong> e acesso online direto no WhatsApp</p>
-                </div>
-                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
-                    <i class="fa-solid fa-bolt" style="font-size: 30px; color: #fff; background-color: #FFD700; padding: 10px; border-radius: 50%; margin-right: 15px;"></i>
-                    <p style="margin: 0;"><strong>Acesso imediato e vitalício</strong> – nada de esperar dias!</p>
-                </div>
-                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 30px; color: #fff; background-color: #25D366; padding: 10px; border-radius: 50%; margin-right: 15px;"></i>
-                    <p style="margin: 0;">Entrega direto no seu <strong>WhatsApp</strong></p>
-                </div>
-                 <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
-                    <i class="fa-solid fa-shield-heart" style="font-size: 30px; color: #fff; background-color: #FF69B4; padding: 10px; border-radius: 50%; margin-right: 15px;"></i>
-                    <p style="margin: 0;"><strong>Garantia de 30 dias</strong> – se não amar, devolvemos seu dinheiro</p>
-                </div>
-
+                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;"> <i class="fa-solid fa-circle-check" style="font-size: 30px; color: #fff; background-color: #6A5ACD; padding: 10px; border-radius: 50%; margin-right: 15px;"></i> <p style="margin: 0;"><strong>30 atividades cristãs</strong> educativas para crianças de 3 a 9 anos</p> </div>
+                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;"> <i class="fa-solid fa-book-open-reader" style="font-size: 30px; color: #fff; background-color: #87CEEB; padding: 10px; border-radius: 50%; margin-right: 15px;"></i> <p style="margin: 0;"><strong>Livrinho em PDF para impressão</strong> e acesso online direto no WhatsApp</p> </div>
+                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;"> <i class="fa-solid fa-bolt" style="font-size: 30px; color: #fff; background-color: #FFD700; padding: 10px; border-radius: 50%; margin-right: 15px;"></i> <p style="margin: 0;"><strong>Acesso imediato e vitalício</strong> – nada de esperar dias!</p> </div>
+                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;"> <i class="fa-brands fa-whatsapp" style="font-size: 30px; color: #fff; background-color: #25D366; padding: 10px; border-radius: 50%; margin-right: 15px;"></i> <p style="margin: 0;">Entrega direto no seu <strong>WhatsApp</strong></p> </div>
+                <div style="display: flex; align-items: center; background-color: #fff; padding: 20px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;"> <i class="fa-solid fa-shield-heart" style="font-size: 30px; color: #fff; background-color: #FF69B4; padding: 10px; border-radius: 50%; margin-right: 15px;"></i> <p style="margin: 0;"><strong>Garantia de 30 dias</strong> – se não amar, devolvemos seu dinheiro</p> </div>
              </div>
         </section>
         
-        <!-- ============================ -->
-        <!-- Seção 4 – Mamães Encantadas  -->
-        <!-- ============================ -->
         <section id="depoimentos" style="margin-bottom: 50px; padding-top: 30px;">
             <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44; margin-bottom: 30px;">O que as mamães estão dizendo:</h2>
-            
-            <div style="background-color: #FFF0F5; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid white; position: relative; overflow: hidden;">
-                <i class="fa-solid fa-quote-left" style="position: absolute; top: -10px; left: 10px; font-size: 60px; color: rgba(255, 192, 203, 0.5); z-index: 1;"></i>
-                <div style="position: relative; z-index: 2;">
-                    <div style="color: #FFD700; margin-bottom: 10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p style="margin: 0; font-style: italic;">“Minha filha simplesmente ama! É a primeira vez que vejo ela aprender sobre a Bíblia de forma tão divertida.”</p>
-                    <p style="margin: 10px 0 0 0; font-weight: 600; color: #DB7093;">- Mamãe Ana P.</p>
-                </div>
-            </div>
-
-            <div style="background-color: #F0FFF0; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid white; position: relative; overflow: hidden;">
-                <i class="fa-solid fa-quote-left" style="position: absolute; top: -10px; left: 10px; font-size: 60px; color: rgba(152, 251, 152, 0.5); z-index: 1;"></i>
-                <div style="position: relative; z-index: 2;">
-                     <div style="color: #FFD700; margin-bottom: 10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p style="margin: 0; font-style: italic;">“Comprei sem esperar muito, mas foi a melhor coisa! Meu filho largou o tablet e ficou animado com as atividades.”</p>
-                    <p style="margin: 10px 0 0 0; font-weight: 600; color: #3CB371;">- Mamãe Carla M.</p>
-                </div>
-            </div>
+            <div style="background-color: #FFF0F5; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid white; position: relative; overflow: hidden;"> <i class="fa-solid fa-quote-left" style="position: absolute; top: -10px; left: 10px; font-size: 60px; color: rgba(255, 192, 203, 0.5); z-index: 1;"></i> <div style="position: relative; z-index: 2;"> <div style="color: #FFD700; margin-bottom: 10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div> <p style="margin: 0; font-style: italic;">“Minha filha simplesmente ama! É a primeira vez que vejo ela aprender sobre a Bíblia de forma tão divertida.”</p> <p style="margin: 10px 0 0 0; font-weight: 600; color: #DB7093;">- Mamãe Ana P.</p> </div> </div>
+            <div style="background-color: #F0FFF0; border-radius: 20px; padding: 25px; margin-bottom: 20px; text-align: left; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 2px solid white; position: relative; overflow: hidden;"> <i class="fa-solid fa-quote-left" style="position: absolute; top: -10px; left: 10px; font-size: 60px; color: rgba(152, 251, 152, 0.5); z-index: 1;"></i> <div style="position: relative; z-index: 2;"> <div style="color: #FFD700; margin-bottom: 10px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div> <p style="margin: 0; font-style: italic;">“Comprei sem esperar muito, mas foi a melhor coisa! Meu filho largou o tablet e ficou animado com as atividades.”</p> <p style="margin: 10px 0 0 0; font-weight: 600; color: #3CB371;">- Mamãe Carla M.</p> </div> </div>
         </section>
         
-        <!-- ============================ -->
-        <!-- Seção 5 – Oferta Irresistível -->
-        <!-- ============================ -->
         <section id="oferta" style="background: linear-gradient(to top, #FFFFE0, #FFFACD); border: 4px solid white; border-radius: 30px; padding: 30px; margin-bottom: 50px; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2); outline: 4px solid #FFD700;">
-            <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44; margin-top: 0;">
-                <i class="fa-solid fa-star" style="color: #FFA500;"></i> Oferta Especial por Tempo Limitado! <i class="fa-solid fa-star" style="color: #FFA500;"></i>
-            </h2>
+            <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44; margin-top: 0;"> <i class="fa-solid fa-star" style="color: #FFA500;"></i> Oferta Especial por Tempo Limitado! <i class="fa-solid fa-star" style="color: #FFA500;"></i> </h2>
             <p style="font-size: 20px;">De <span style="text-decoration: line-through;">R$29,90</span> por apenas:</p>
-            <div style="font-size: 80px; font-family: 'Fredoka One', cursive; color: #3CB371; margin: 10px 0; text-shadow: 3px 3px 0px white;">
-                R$1,99
-            </div>
+            <div style="font-size: 80px; font-family: 'Fredoka One', cursive; color: #3CB371; margin: 10px 0; text-shadow: 3px 3px 0px white;"> R$1,99 </div>
             <p style="font-size: 15px; background-color: #FF6347; color: white; display: inline-block; padding: 5px 15px; border-radius: 20px; font-weight: 600;">Atenção: Acesso promocional pode encerrar a qualquer momento!</p>
-            
-            <a href="https://checkout.seguropagar.site/VCCL1O8SC8AX" style="display: block; background: linear-gradient(45deg, #32CD32, #98FB98); color: white; padding: 20px 30px; border-radius: 20px; text-decoration: none; font-family: 'Baloo 2', cursive; font-size: 24px; box-shadow: 0 8px 15px rgba(50, 205, 50, 0.3); border-bottom: 5px solid #228B22; margin-top: 30px; animation: pulse 2s infinite; transition: all 0.2s ease;">
-                <i class="fa-solid fa-gift"></i> SIM! QUERO O MEU ACESSO MÁGICO!
-            </a>
+            <a href="https://checkout.seguropagar.site/VCCL1O8SC8AX" style="display: block; background: linear-gradient(45deg, #32CD32, #98FB98); color: white; padding: 20px 30px; border-radius: 20px; text-decoration: none; font-family: 'Baloo 2', cursive; font-size: 24px; box-shadow: 0 8px 15px rgba(50, 205, 50, 0.3); border-bottom: 5px solid #228B22; margin-top: 30px; animation: pulse 2s infinite; transition: all 0.2s ease;"> <i class="fa-solid fa-gift"></i> SIM! QUERO O MEU ACESSO MÁGICO! </a>
         </section>
 
-        <!-- ============================ -->
-        <!-- Seção 6 – Garantia de Sonho  -->
-        <!-- ============================ -->
         <section id="garantia" style="display: flex; align-items: center; justify-content: center; background-color: #F0F8FF; padding: 30px; border-radius: 20px; margin-bottom: 50px; flex-wrap: wrap; border: 4px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-            <div style="flex: 1; min-width: 100px; max-width: 150px; padding-right: 20px;">
-                 <i class="fa-solid fa-shield-heart" style="font-size: 90px; color: #87CEEB; text-shadow: 0 0 15px rgba(135, 206, 235, 0.7);"></i>
-            </div>
-            <div style="flex: 2; min-width: 250px; text-align: left;">
-                <h3 style="font-family: 'Baloo 2', cursive; color: #4682B4; font-size: 24px; margin-top: 0;">Garantia Incondicional de 30 Dias</h3>
-                <p style="margin-bottom: 0; line-height: 1.6;">
-                    Seu risco é <strong>ZERO</strong>. Se por qualquer motivo você não se apaixonar pelo material, basta nos avisar e devolvemos 100% do seu dinheiro, sem perguntas.
-                </p>
-            </div>
+            <div style="flex: 1; min-width: 100px; max-width: 150px; padding-right: 20px;"> <i class="fa-solid fa-shield-heart" style="font-size: 90px; color: #87CEEB; text-shadow: 0 0 15px rgba(135, 206, 235, 0.7);"></i> </div>
+            <div style="flex: 2; min-width: 250px; text-align: left;"> <h3 style="font-family: 'Baloo 2', cursive; color: #4682B4; font-size: 24px; margin-top: 0;">Garantia Incondicional de 30 Dias</h3> <p style="margin-bottom: 0; line-height: 1.6;"> Seu risco é <strong>ZERO</strong>. Se por qualquer motivo você não se apaixonar pelo material, basta nos avisar e devolvemos 100% do seu dinheiro, sem perguntas. </p> </div>
         </section>
 
-        <!-- ============================ -->
-        <!-- Seção 7 – Dúvidas Frequentes -->
-        <!-- ============================ -->
         <section id="faq" style="text-align: left; max-width: 700px; margin: 0 auto;">
             <h2 style="font-family: 'Baloo 2', cursive; text-align: center; font-size: 32px; color: #352F44; margin-bottom: 30px;">Tirando suas Dúvidas</h2>
-            
-            <div style="margin-bottom: 15px;">
-                <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>Como vou receber o material?</h4>
-                <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);">
-                    <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>Direto no seu WhatsApp, logo após a confirmação da compra. Simples e rápido!
-                </p>
-            </div>
-            <div style="margin-bottom: 15px;">
-                <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>É físico ou digital?</h4>
-                <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);">
-                    <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>É 100% digital em formato PDF + Flipbook. Você pode acessar do celular, tablet ou computador e imprimir se quiser.
-                </p>
-            </div>
-            <div style="margin-bottom: 15px;">
-                <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>Preciso pagar mensalidade?</h4>
-                <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);">
-                    <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>Não! É um pagamento único de R$1,99 e o acesso é seu para sempre (vitalício).
-                </p>
-            </div>
+            <div style="margin-bottom: 15px;"> <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>Como vou receber o material?</h4> <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);"> <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>Direto no seu WhatsApp, logo após a confirmação da compra. Simples e rápido! </p> </div>
+            <div style="margin-bottom: 15px;"> <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>É físico ou digital?</h4> <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);"> <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>É 100% digital em formato PDF + Flipbook. Você pode acessar do celular, tablet ou computador e imprimir se quiser. </p> </div>
+            <div style="margin-bottom: 15px;"> <h4 style="background-color: #E6E6FA; margin: 0; padding: 15px; border-radius: 15px 15px 0 0; font-size: 18px; color: #352F44; font-family: 'Baloo 2', cursive;"><i class="fa-solid fa-question-circle" style="margin-right: 10px; color: #6A5ACD;"></i>Preciso pagar mensalidade?</h4> <p style="margin: 0; line-height: 1.6; background-color: #fff; padding: 15px; border-radius: 0 0 15px 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);"> <i class="fa-solid fa-paper-plane" style="color: #FFB6C1; margin-right: 8px;"></i>Não! É um pagamento único de R$1,99 e o acesso é seu para sempre (vitalício). </p> </div>
         </section>
 
-        <!-- Rodapé -->
         <footer style="margin-top: 50px; padding-top: 20px; border-top: 2px dashed #EAE0D5;">
             <p style="font-size: 12px; color: #8C849B;">Todos os direitos reservados © 2024</p>
             <p style="font-size: 10px; color: #aaa;">Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.</p>
         </footer>
-
     </div>
-
 </body>
 </html>
