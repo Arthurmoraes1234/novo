@@ -13,31 +13,12 @@
     <!-- Ícones do Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <!-- CSS para animações e o novo SLIDER -->
+    <!-- CSS para animações (CSS do slider foi removido) -->
     <style>
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
-        }
-        
-        /* Estilos do Slider de Imagens */
-        .slider-wrapper {
-            display: flex;
-            overflow-x: auto; /* Permite a rolagem horizontal */
-            scroll-snap-type: x mandatory; /* Efeito de "travar" em cada imagem */
-            -webkit-overflow-scrolling: touch; /* Melhora a rolagem em iOS */
-            scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
-        }
-        .slider-wrapper::-webkit-scrollbar {
-            display: none; /* Esconde a barra de rolagem no Chrome, Safari, etc. */
-        }
-        .slide {
-            flex: 0 0 100%; /* Cada imagem ocupa 100% da largura do contêiner */
-            width: 100%;
-            scroll-snap-align: start; /* Alinha a imagem no início ao "travar" */
-            object-fit: contain; /* Garante que a imagem apareça inteira */
-            border-radius: 15px;
         }
     </style>
     
@@ -99,27 +80,16 @@
                 <i class="fa-solid fa-cross" style="color: #DB7093; margin-right: 8px;"></i>Seus filhos no caminho de cristo!
             </p>
             
-            <!-- SEÇÃO DE PRÉVIA AGORA É UM SLIDER DE IMAGENS -->
+            <!-- SEÇÃO DE PRÉVIA ATUALIZADA COM FLIPPINGBOOK -->
             <div id="previa" style="margin-top: 30px; margin-bottom: 30px;">
                 <h2 style="font-family: 'Baloo 2', cursive; font-size: 32px; color: #352F44;">
                     <i class="fa-solid fa-hand-sparkles" style="color: #FFB6C1;"></i> Uma espiadinha no nosso material...
                 </h2>
                 <div style="border: 8px solid white; border-radius: 25px; padding: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background-color: #F0F8FF;">
                      
-                    <!-- INÍCIO DO SLIDER -->
-                    <div class="slider-wrapper">
-                        <!-- SLIDE 1: Adicione o link da sua imagem aqui -->
-                        <img src="https://i.imgur.com/mJ2VqYq.png" alt="Prévia da atividade 1" class="slide">
-                        
-                        <!-- SLIDE 2: Adicione o link da sua imagem aqui -->
-                        <img src="https://i.imgur.com/vHqB3qY.png" alt="Prévia da atividade 2" class="slide">
-                        
-                        <!-- SLIDE 3: Adicione o link da sua imagem aqui -->
-                        <img src="https://i.imgur.com/qg9Yh7k.png" alt="Prévia da atividade 3" class="slide">
-                        
-                        <!-- Para adicionar mais imagens, apenas copie e cole a linha <img> acima -->
-                    </div>
-                    <!-- FIM DO SLIDER -->
+                    <!-- INÍCIO DO CÓDIGO DO FLIPPINGBOOK -->
+                    <a href="https://online.flippingbook.com/view/971641942/" class="fbo-embed" data-fbo-id="fe606a3bd1" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Ligue os pontos – Arca de Noé Colorir – Jonas e o grande pe…</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=971641942"></script>
+                    <!-- FIM DO CÓDIGO DO FLIPPINGBOOK -->
 
                 </div>
             </div>
